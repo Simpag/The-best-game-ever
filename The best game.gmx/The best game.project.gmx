@@ -8,10 +8,7 @@
   <sprites name="sprites"/>
   <backgrounds name="background"/>
   <paths name="paths"/>
-  <objects name="objects">
-    <object>objects\yee</object>
-    <object>objects\hey</object>
-  </objects>
+  <objects name="objects"/>
   <help>
     <rtf>help.rtf</rtf>
   </help>
