@@ -10,6 +10,7 @@
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\yee</object>
+    <object>objects\hey</object>
   </objects>
   <help>
     <rtf>help.rtf</rtf>
