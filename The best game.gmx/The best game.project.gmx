@@ -9,7 +9,7 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
-    <object>objects\obj_hey</object>
+    <object>objects\yee</object>
   </objects>
   <help>
     <rtf>help.rtf</rtf>
