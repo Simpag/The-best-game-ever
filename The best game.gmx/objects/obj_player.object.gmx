@@ -32,10 +32,14 @@ vsp = 0;
 movespeed = 4;
 hsp_carry = 0;
 
+//Junmp vars
 jumpspeed_normal = 6;
 jumpspeed_powerup =8;
 
 jumpspeed = jumpspeed_normal;
+
+jumpsmax = 2; //maximum of jumps
+jumps = 0;
 
 if (global.checkpointR == room) {
     x = global.checkpointx;
@@ -114,7 +118,12 @@ hsp = move * movespeed;
 if (vsp &lt; 10) vsp += grav;
 
 if (place_meeting(x, y + 1, obj_ground)) {
-   if (key_jump) vsp = -jumpspeed;
+   jumps = jumpsmax;
+}
+
+if (key_jump) &amp;&amp; (jumps &gt; 0) {
+    jumps -= 1;
+    vsp = -jumpspeed;
 }
 
 var hsp_final = hsp + hsp_carry;
