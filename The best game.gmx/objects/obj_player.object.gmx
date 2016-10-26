@@ -40,6 +40,7 @@ jumpspeed = jumpspeed_normal;
 
 jumpsmax = 2; //maximum of jumps
 jumps = 0;
+wjumps = 0; //Wall jumps
 
 if (global.checkpointR == room) {
     x = global.checkpointx;
@@ -119,10 +120,16 @@ if (vsp &lt; 10) vsp += grav;
 
 if (place_meeting(x, y + 1, obj_ground)) {
    jumps = jumpsmax;
+   wjumps = jumpsmax;
 }
 
-if (key_jump) &amp;&amp; (jumps &gt; 0) {
+if (key_jump) &amp;&amp; (jumps &gt; 0) &amp;&amp; (!place_meeting(x+1, y, obj_ground) || !place_meeting(x-1, y, obj_ground)) {
     jumps -= 1;
+    vsp = -jumpspeed;
+}
+
+if (key_jump) &amp;&amp; (place_meeting(x+1, y, obj_ground) || place_meeting(x-1, y, obj_ground)) &amp;&amp; (wjumps &gt; 0) {
+    wjumps -= 1;
     vsp = -jumpspeed;
 }
 
