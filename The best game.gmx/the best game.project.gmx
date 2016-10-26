@@ -41,6 +41,7 @@
     <room>rooms\rm_initialize</room>
     <room>rooms\rm_lvl1</room>
     <room>rooms\rm_lvl2</room>
+    <room>rooms\rm_lvl3</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
