@@ -18,6 +18,7 @@
     <sprite>sprites\spr_save</sprite>
     <sprite>sprites\spr_oneway</sprite>
     <sprite>sprites\spr_oneway_moving</sprite>
+    <sprite>sprites\sprite10</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -38,6 +39,7 @@
     <object>objects\obj_save</object>
     <object>objects\obj_oneway</object>
     <object>objects\obj_oneway_moving</object>
+    <object>objects\obj_ground_dead</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_initialize</room>
