@@ -41,35 +41,6 @@ jumpspeed = jumpspeed_normal; //I coded before with jumpspeed as the variable so
 
 wjumpsmax = 1; //maximum of wall jumps
 wjumps = 0; //Set used wall jumps to 0
-
-if (global.checkpointR == room) { //This is the checkpoint variables, dont mind
-    x = global.checkpointx;
-    y = global.checkpointy;
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="1" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>game_restart();
 </string>
           </argument>
         </arguments>
