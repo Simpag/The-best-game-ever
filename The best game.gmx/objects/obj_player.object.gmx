@@ -187,6 +187,7 @@ if (vsp &lt; 10) vsp += grav;
 
 //Sneak to walk slowley
 if (key_sneak) {
+    hsp = move * movespeed/6; //Adds 1/6 of the hsp to the character
 }
 
 //horizontal collision
