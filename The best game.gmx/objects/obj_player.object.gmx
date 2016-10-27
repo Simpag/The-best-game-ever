@@ -26,27 +26,27 @@
           <argument>
             <kind>1</kind>
             <string>///initialize variables
-grav = 0.2;
-hsp = 0;
-vsp = 0;
-movespeed = 4;
-movedecrease = 0.9;
+grav = 0.2; //Gravity amount
+hsp = 0; //Set horizontal speed to 0, standing still.
+vsp = 0; // Same as above but vertical
+movespeed = 4; //Move speed
+movedecrease = 0.9; //Move speed decrease on each frame
+moveincrease = 0.3; //Move speed increase on each fram
 
 //Junmp vars
-jumpspeed_normal = 6;
-jumpspeed_powerup =8;
+jumpspeed_normal = 6; //Jump height on normal
+jumpspeed_powerup =8; //Jump height when powered up
 
-jumpspeed = jumpspeed_normal;
+jumpspeed = jumpspeed_normal; //I coded before with jumpspeed as the variable so dnt want to chnage the other code. 
 
-wjumpsmax = 1; //maximum of jumps
-wjumps = 0; //Wall jumps
+wjumpsmax = 1; //maximum of wall jumps
+wjumps = 0; //Set used wall jumps to 0
 
-if (global.checkpointR == room) {
+if (global.checkpointR == room) { //This is the checkpoint variables, dont mind
     x = global.checkpointx;
     y = global.checkpointy;
 }
 
-key_down = 0;
 </string>
           </argument>
         </arguments>
@@ -168,14 +168,15 @@ take the move var times the movementspeed (in the create event), so movespeed * 
 */
 var stop = 0.2; //temporary variable for when the player should stop
 
-moving = move * movespeed; //Move will be either -1 or 1, so multiply movespeed by 1 or -1.
-
 if move != 0 { //if the player is pressing a button
-    hsp = moving; //assign moving to hsp, so when the player releases the button the speed is not set to 0. Instead stored in hsp.
+    hsp += move * moveincrease; //Move will be either -1 or 1, so multiply 1 or -1 by moveincrease. 
+        if ((sign(hsp) == 1) &amp;&amp; (hsp &gt; movespeed)) || ((sign(hsp) == -1) &amp;&amp; (hsp &lt; -movespeed)) { //If hsp is positive and greater than movespeed, set hsp to movespeed so the player can't move faster than the move speed. Same for the other side of the ||, but its negative.
+            hsp = move * movespeed; //when hsp is more than movespeed, set hsp to movespeed. Move * movespeed is to see if its to the left (-) or to the right (+).
+        }
     } else {
         if (hsp != 0) { //If hsp is not equal to 0
             hsp = hsp * movedecrease; //Multiplay hsp with the move decrease speed
-                if ((sign(hsp) == 1) &amp;&amp; (hsp &lt; stop)) || ((sign(hsp) == -1) &amp;&amp; (hsp &gt; -stop)) { //hsp is positive and is less than stop, make hsp = 0. Same for after the || (or) but for the left negative variable
+                if ((sign(hsp) == 1) &amp;&amp; (hsp &lt; stop)) || ((sign(hsp) == -1) &amp;&amp; (hsp &gt; -stop)) { //If hsp is positive and is less than stop, make hsp = 0. Same for after the || (or) but for the left negative variable
                         hsp = 0; //Make hsp = 0
                     }
             }
@@ -185,8 +186,7 @@ if move != 0 { //if the player is pressing a button
 if (vsp &lt; 10) vsp += grav;
 
 //Sneak to walk slowley
-if key_sneak == true {
-    hsp = hsp/2;
+if (key_sneak) {
 }
 
 //horizontal collision
@@ -207,9 +207,8 @@ if (place_meeting(x, y + vsp, obj_ground)){ //if its on the ground
 }
 
 //Write movement code above this
-x += hsp
-y += vsp
-
+x += hsp //Add the hsp to x to move the player
+y += vsp //Same as the x position but with vertical speed.
 </string>
           </argument>
         </arguments>
