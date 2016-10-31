@@ -123,8 +123,8 @@ if (hit == 1) {
 if (place_meeting(x, y, obj_player)) {
     if (attack == 1) {
         with (obj_player) {    
-            hp -= obj_enemy.melee_damage;
-            vsp = -5;
+            playerHp -= obj_enemy.melee_damage;
+            vsp = -3;
             hsp = sign(x - other.x) * 3;
         }
         attack = 0;
@@ -142,22 +142,6 @@ if (hp &lt;= 0) {
             }
     }
 }
-
-/*if (place_meeting(x, y, obj_player)) {
-    if (obj_player.y &lt; y-16) {
-        with(obj_player) vsp = -jumpspeed;
-            {
-            var i, dropRate
-            dropRate = irandom(4) + 1;
-            for (i = 0; i &lt; dropRate; i++) {
-            instance_create(x, y, obj_coin);
-            }
-        }
-        instance_destroy();
-    } else {
-        scr_death();
-        }
-    } */
 </string>
           </argument>
         </arguments>

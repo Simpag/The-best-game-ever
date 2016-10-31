@@ -26,8 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>//When the player dies
-if (obj_player.hp &lt;= 0) {
+if (playerHp &lt;= 0) {
     scr_death();
+}
+
+if lives &lt;= 0 { //If lives is 0 then restart game
+    game_restart()
 }
 </string>
           </argument>
@@ -53,7 +57,7 @@ if (obj_player.hp &lt;= 0) {
             <kind>1</kind>
             <string>// Player Healthbar
 draw_sprite(spr_healthbar_bg, 1, view_xview[0] + 41, view_yview[0] + 29);
-draw_sprite_ext(spr_healthbar_inner, 1, view_xview[0] + 41, view_yview[0] + 29, obj_player.hp/100, 1, 0, c_white, 1);
+draw_sprite_ext(spr_healthbar_inner, 1, view_xview[0] + 41, view_yview[0] + 29, playerHp/100, 1, 0, c_white, 1);
 draw_sprite(spr_healthbar_border, 1, view_xview[0] + 10, view_yview[0] + 10);
 </string>
           </argument>

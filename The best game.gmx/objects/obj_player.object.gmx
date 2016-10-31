@@ -33,7 +33,6 @@ movespeed = 4; //Move speed
 movedecrease = 0.9; //Move speed decrease on each frame
 moveincrease = 0.3; //Move speed increase on each fram
 facing = 1; //Variable to know which dir player is facing
-hp = 100; // Player hp
 melee_damage = 50; //Player damage / meele
 
 //Junmp vars

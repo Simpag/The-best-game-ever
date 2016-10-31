@@ -48,10 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if lives &lt;= 0 {
-    game_restart()
-}
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>

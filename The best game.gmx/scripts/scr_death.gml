@@ -1,4 +1,5 @@
 lives -= 1 //Remove one life
+playerHp = 100;
 if (global.checkpointR == room) { //If the checkpoint exists in the room
     with(obj_player) { //Set the player x and y to the checkpoint
         x = global.checkpointx; //Setting the x to the checkpoint x when spawning.
