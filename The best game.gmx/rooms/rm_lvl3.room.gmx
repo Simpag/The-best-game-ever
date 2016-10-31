@@ -189,6 +189,7 @@
     <instance objName="obj_ground_dead" x="576" y="736" name="inst_08711D73" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ground_dead" x="544" y="736" name="inst_C30501FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ground_dead" x="544" y="704" name="inst_C6C6F471" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cont_health" x="128" y="96" name="inst_AC0CF8CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

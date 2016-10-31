@@ -110,11 +110,6 @@ if key_commentme == true {
     vsp = -50;
 }
 
-//When the player dies
-if (hp &lt;= 0) {
-    scr_death();
-}
-
 //Meele
 if key_melee {
     sprite_index = spr_player_melee; //change to melee animation
