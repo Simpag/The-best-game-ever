@@ -32,11 +32,38 @@ grav = 0.2;
 hsp = 0; //horizontal speed
 vsp = 0; //vertical speed
 foh = 0; //fear of heights
+hit = 0; //If the enemy is hit or not
+hp = 100; //Enemy hp
+attack = 1; //If the enemy can attack or not
+melee_damage = 20; //Melee damage of the enemy
 
 image_speed = 0;
 image_index = irandom(1)
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>attack = 1;
 </string>
           </argument>
         </arguments>
@@ -88,7 +115,35 @@ x += hsp
 y += vsp
 
 //Enemy collision
+if (hit == 1) {
+    hp -= obj_player.melee_damage;
+    hit = 0;
+}
+
 if (place_meeting(x, y, obj_player)) {
+    if (attack == 1) {
+        with (obj_player) {    
+            hp -= obj_enemy.melee_damage;
+            vsp = -5;
+            hsp = sign(x - other.x) * 3;
+        }
+        attack = 0;
+        alarm[0] = 2 * room_speed;
+    }
+}
+
+if (hp &lt;= 0) {
+    instance_destroy();
+    {
+        var i, dropRate //temp vars
+        dropRate = irandom(4) + 1; //Set a random droprate
+            for (i = 0; i &lt; dropRate; i++) { //creates and instace everytime i isnt equal to dropRate and adds 1 to i.
+            instance_create(x, y, obj_coin);
+            }
+    }
+}
+
+/*if (place_meeting(x, y, obj_player)) {
     if (obj_player.y &lt; y-16) {
         with(obj_player) vsp = -jumpspeed;
             {
@@ -102,7 +157,7 @@ if (place_meeting(x, y, obj_player)) {
     } else {
         scr_death();
         }
-    }
+    } */
 </string>
           </argument>
         </arguments>

@@ -32,6 +32,9 @@ vsp = 0; // Same as above but vertical
 movespeed = 4; //Move speed
 movedecrease = 0.9; //Move speed decrease on each frame
 moveincrease = 0.3; //Move speed increase on each fram
+facing = 1; //Variable to know which dir player is facing
+hp = 100; // Player hp
+melee_damage = 50; //Player damage / meele
 
 //Junmp vars
 jumpspeed_normal = 6; //Jump height on normal
@@ -94,6 +97,7 @@ key_right = keyboard_check(ord("D"));
 key_left = -keyboard_check(ord("A"));
 key_down = keyboard_check(ord("S"));
 key_jump = keyboard_check_pressed(ord("W"));
+key_melee = keyboard_check_pressed(vk_space);
 key_commentme = keyboard_check(ord("V"));
 key_commentme1 = keyboard_check_pressed(ord("N"));
 
@@ -104,6 +108,30 @@ if key_commentme1 == true {
 
 if key_commentme == true {
     vsp = -50;
+}
+
+//When the player dies
+if (hp &lt;= 0) {
+    scr_death();
+}
+
+//Meele
+if key_melee {
+    sprite_index = spr_player_melee; //change to melee animation
+    image_speed = 1; //Set the animation speed
+    
+    with (instance_create(x,y,obj_player_melee_hitbox)) { //creates and instance and keeps the id in the statement
+        image_xscale = obj_player.facing;
+        with (instance_place(x,y,obj_enemy)) {
+            if (hit == 0) {
+                hit = 1;
+                vsp = -3;
+                hsp = sign(x - other.x) * 2;
+                image_xscale = sign(hsp);
+            }
+        }
+    }
+    
 }
 
 //Normal ground jumping
@@ -155,6 +183,14 @@ if move != 0 { //if the player is pressing a button
 // if vertical speed is less than 10, add the gravity to it.
 if (vsp &lt; 10) vsp += grav;
 
+//Setting facing var
+if move != 0 { //if the player is pressing a button
+    facing = move 
+}
+
+//Player dir facing
+image_xscale = facing;
+
 //horizontal collision
 if (place_meeting(x+hsp, y, obj_ground)){ //if the object will collide when he adds the hsp to his x cord
 //sign returns 1, -1 or 0. if its 324 its 1 and -324 its -1 or 0 its 0. 
@@ -199,6 +235,33 @@ y += vsp //Same as the x position but with vertical speed.
             <kind>1</kind>
             <string>scr_death()
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Change back to player sprite after melee animation
+
+if sprite_index = spr_player_melee {
+    sprite_index = spr_player;
+}
 </string>
           </argument>
         </arguments>
