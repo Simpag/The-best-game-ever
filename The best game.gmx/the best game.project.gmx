@@ -24,6 +24,7 @@
     </sprites>
     <sprites name="Active objects">
       <sprite>sprites\spr_oneway_moving</sprite>
+      <sprite>sprites\spr_coin</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -50,6 +51,7 @@
     </objects>
     <objects name="Active objects">
       <object>objects\obj_oneway_moving</object>
+      <object>objects\obj_coin</object>
     </objects>
     <objects name="Controllers">
       <object>objects\obj_score</object>
