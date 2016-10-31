@@ -35,10 +35,37 @@ movespeed = 1;
 grav = 0.2;
 hsp = 0; //horizontal speed
 vsp = 0; //vertical speed
+collect = 0; //If the player can collect the coins
+
+//Allow the player to pick the coin up
+alarm[1] = (random_range(0.08, 1) * 60);
 
 //Stop the coin
 alarm[0] = random_range(0.5, 1) * room_speed; //how far the coin travels
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>collect = 1;
 </string>
           </argument>
         </arguments>
@@ -113,8 +140,10 @@ y += vsp
 
 
 //Move towards player when its near
-if distance_to_object(obj_player) &lt; 10 {
-    move_towards_point(obj_player.x, obj_player.y, 2);
+if (collect == 1) {
+    if distance_to_object(obj_player) &lt; 6 {
+        move_towards_point(obj_player.x, obj_player.y, 2);
+    }
 }
 </string>
           </argument>
@@ -139,8 +168,10 @@ if distance_to_object(obj_player) &lt; 10 {
           <argument>
             <kind>1</kind>
             <string>//Add money and destroy item
-score += 10;
-instance_destroy();
+if (movespeed == 0) { //If the movespeed of the coin is equal to zero
+    score += 10;
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

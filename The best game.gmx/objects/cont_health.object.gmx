@@ -8,29 +8,6 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>global.checkpointR = 0; //So the player spawns in the room and not the last checkpoint in another room
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -48,8 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if lives &lt;= 0 {
-    game_restart()
+            <string>//When the player dies
+if (obj_player.hp &lt;= 0) {
+    scr_death();
 }
 </string>
           </argument>
@@ -73,12 +51,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_halign(fa_left);
-draw_set_valign(fa_top);
-draw_set_color(c_black);
-draw_set_font(fnt_score);
-draw_text(view_xview + 10, view_yview + 60, "Score: " + string(score));
-draw_text(view_xview + 10, view_yview + 80, "Lives: " + string(lives));
+            <string>// Player Healthbar
+draw_sprite(spr_healthbar_bg, 1, view_xview[0] + 41, view_yview[0] + 29);
+draw_sprite_ext(spr_healthbar_inner, 1, view_xview[0] + 41, view_yview[0] + 29, obj_player.hp/100, 1, 0, c_white, 1);
+draw_sprite(spr_healthbar_border, 1, view_xview[0] + 10, view_yview[0] + 10);
 </string>
           </argument>
         </arguments>

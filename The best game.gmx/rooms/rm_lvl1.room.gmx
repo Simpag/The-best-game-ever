@@ -88,6 +88,7 @@
     <instance objName="obj_oneway" x="80" y="560" name="inst_E27AB92E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_oneway" x="48" y="496" name="inst_B158B973" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_oneway_moving" x="1056" y="352" name="inst_DA44B18F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="cont_health" x="24" y="32" name="inst_0E151E66" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

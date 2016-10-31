@@ -25,6 +25,11 @@
       <sprite>sprites\spr_save</sprite>
       <sprite>sprites\spr_oneway</sprite>
       <sprite>sprites\spr_ground_dead</sprite>
+      <sprites name="Healthbar">
+        <sprite>sprites\spr_healthbar_border</sprite>
+        <sprite>sprites\spr_healthbar_inner</sprite>
+        <sprite>sprites\spr_healthbar_bg</sprite>
+      </sprites>
     </sprites>
     <sprites name="Active objects">
       <sprite>sprites\spr_oneway_moving</sprite>
@@ -62,6 +67,7 @@
     </objects>
     <objects name="Controllers">
       <object>objects\obj_score</object>
+      <object>objects\cont_health</object>
     </objects>
   </objects>
   <rooms name="rooms">
