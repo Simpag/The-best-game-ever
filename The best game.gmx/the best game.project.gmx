@@ -35,6 +35,12 @@
       <sprite>sprites\spr_oneway_moving</sprite>
       <sprite>sprites\spr_coin</sprite>
     </sprites>
+    <sprites name="hub">
+      <sprite>sprites\hb_room_enter1</sprite>
+      <sprite>sprites\hb_room_enter2</sprite>
+      <sprite>sprites\hb_room_enter3</sprite>
+      <sprite>sprites\hb_room_enter4</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -69,9 +75,16 @@
       <object>objects\obj_score</object>
       <object>objects\cont_health</object>
     </objects>
+    <objects name="Hub">
+      <object>objects\hb_room1</object>
+      <object>objects\hb_room2</object>
+      <object>objects\hb_room3</object>
+      <object>objects\hb_room4</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_initialize</room>
+    <room>rooms\rm_hub</room>
     <room>rooms\rm_lvl1</room>
     <room>rooms\rm_testing</room>
     <room>rooms\rm_lvl3</room>
