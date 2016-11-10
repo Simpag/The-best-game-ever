@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>with(obj_player) {
+    power_up = true;
     jumpspeed = jumpspeed_powerup;
     sprite_index = spr_player_powerup;
     alarm[0] = 300;

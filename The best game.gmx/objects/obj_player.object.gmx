@@ -34,6 +34,7 @@ movedecrease = 0.9; //Move speed decrease on each frame
 moveincrease = 0.3; //Move speed increase on each fram
 facing = 1; //Variable to know which dir player is facing
 melee_damage = 50; //Player damage / meele
+power_up = false; //If the player has a power_up
 
 //Junmp vars
 jumpspeed_normal = 6; //Jump height on normal
@@ -111,10 +112,15 @@ if key_commentme == true {
 
 //Meele
 if key_melee {
-    sprite_index = spr_player_melee; //change to melee animation
-    image_speed = 1; //Set the animation speed
+    if (power_up == true) {
     
-    with (instance_create(x,y,obj_player_melee_hitbox)) { //creates and instance and keeps the id in the statement
+    } else {
+    sprite_index = spr_player_melee; //change to melee animation
+    image_speed = 8 * (1/room_speed); //Set the animation speed
+}
+
+//Creates the hitbox for the player
+    with (instance_create(x,y,obj_player_melee_hitbox)) { //creates an hitbox instance and keeps the id in the statement
         image_xscale = obj_player.facing;
         with (instance_place(x,y,obj_enemy)) {
             if (hit == 0) {
@@ -127,24 +133,28 @@ if key_melee {
     }
     
 }
+//End of melee
 
 //Normal ground jumping
 if (place_meeting(x, y+1, obj_ground)) &amp;&amp; (key_jump) {
     vsp = -jumpspeed;
     audio_play_sound(snd_jump_player,1,0);
 }
+//End of normal ground jumping
 
 //Reseting wall jumps in the air
 if (!place_meeting(x+1, y, obj_ground)) &amp;&amp; (!place_meeting(x-1, y, obj_ground)) &amp;&amp; (!place_meeting(x, y + 1, obj_ground)) {
     wjumps = wjumpsmax;
 }
+//End of reseting wall jumps in the air
 
-//Wall jump
+//Walljump
 if (key_jump) &amp;&amp; (place_meeting(x+1, y, obj_ground) || place_meeting(x-1, y, obj_ground)) &amp;&amp; (wjumps &gt; 0) {
     wjumps -= 1;
     vsp = -jumpspeed;
     audio_play_sound(snd_jump_player,1,0);
 }
+//End of walljump
 
 /*key left will be either -1 or 0 becuase the key_left = -keyboard....
 Key right will be either 1 or 0 brcause the key_right = keyboar....
