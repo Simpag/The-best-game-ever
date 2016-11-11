@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>//Initialize variables
-dir = -1; //Dir = direction
+dir = choose(-1, 1); //Dir = direction
 movespeed = 3;
 grav = 0.2;
 hsp = 0; //horizontal speed
@@ -106,7 +106,8 @@ if (place_meeting(x, y + vsp, obj_ground)){
     }
     vsp = 0;    
     
-    if (foh) &amp;&amp; !position_meeting(x+(sprite_width/2)*dir, y+(sprite_height/2)+8, obj_ground) {
+
+    if (foh) &amp;&amp; (!place_meeting(x+(sprite_width/2)*dir, y+(sprite_height/2)+8, obj_ground)) {
         dir *= -1;
     }   
 }
@@ -132,6 +133,7 @@ if (place_meeting(x, y, obj_player)) {
     }
 }
 
+//Kills the enemy
 if (hp &lt;= 0) {
     instance_destroy();
     {
@@ -142,6 +144,8 @@ if (hp &lt;= 0) {
             }
     }
 }
+
+if (!foh) image_xscale = dir;
 </string>
           </argument>
         </arguments>
