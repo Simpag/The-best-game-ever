@@ -26,25 +26,25 @@
           <argument>
             <kind>1</kind>
             <string>///initialize variables
-grav = 0.2; //Gravity amount
-hsp = 0; //Set horizontal speed to 0, standing still.
-vsp = 0; // Same as above but vertical
-movespeed = 4; //Move speed
-movedecrease = 0.9; //Move speed decrease on each frame
-moveincrease = 0.3; //Move speed increase on each fram
-facing = 1; //Variable to know which dir player is facing
-melee_damage = 50; //Player damage / meele
-power_up = false; //If the player has a power_up
-enter_hub = 0; //If the player can enter a room
+grav = 0.2;                         //Gravity amount
+hsp = 0;                            //Set horizontal speed to 0, standing still.
+vsp = 0;                            // Same as above but vertical
+movespeed = 4;                      //Move speed
+movedecrease = 0.9;                 //Move speed decrease on each frame
+moveincrease = 0.3;                 //Move speed increase on each fram
+facing = 1;                         //Variable to know which dir player is facing
+melee_damage = 50;                  //Player damage / meele
+power_up = false;                   //If the player has a power_up
+hub_enter = 0;                      //If the player can enter a room
 
 //Junmp vars
-jumpspeed_normal = 6; //Jump height on normal
-jumpspeed_powerup =8; //Jump height when powered up
+jumpspeed_normal = 6;               //Jump height on normal
+jumpspeed_powerup =8;               //Jump height when powered up
 
-jumpspeed = jumpspeed_normal; //I coded before with jumpspeed as the variable so dnt want to chnage the other code. 
+jumpspeed = jumpspeed_normal;       //I coded before with jumpspeed as the variable so dnt want to chnage the other code. 
 
-wjumpsmax = 1; //maximum of wall jumps
-wjumps = 0; //Set used wall jumps to 0
+wjumpsmax = 1;                      //maximum of wall jumps
+wjumps = 0;                         //Set used wall jumps to 0
 </string>
           </argument>
         </arguments>
@@ -103,7 +103,7 @@ key_enter_hub = keyboard_check_pressed(ord('E'))
 key_commentme = keyboard_check(ord("V"));
 key_commentme1 = keyboard_check_pressed(ord("N"));
 key_go_back = keyboard_check_pressed(ord("M"));
-key_hub_unlcok = keyboard_check_pressed(ord("H"));
+key_hub_unlock = keyboard_check_pressed(ord("H"));
 
 //Cheats delete them later
 if (key_go_back) {
