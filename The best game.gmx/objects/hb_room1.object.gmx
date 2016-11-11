@@ -72,14 +72,14 @@
           <argument>
             <kind>1</kind>
             <string>if (hub_unlocked &gt;= 1) {
-    sprite_index = hb_room1_unlocked;
+    sprite_index = hb_room1_unlocked; //Sets the sprite to unlocked if it is
     if (place_meeting(x, y, obj_player)) {
-        with(obj_player) enter_hub = 2; 
+        with(obj_player) hub_enter = 2; //Which room
     } else {
-        with(obj_player) enter_hub = 0;
+        with(obj_player) hub_enter = 0; //Makes it so the enter hub key in player does nothing
     }
 } else {
-    sprite_index = hb_room1_locked;
+    sprite_index = hb_room1_locked; //Sets locked sprite if its locked
 }
 </string>
           </argument>

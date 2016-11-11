@@ -102,8 +102,14 @@ key_melee = keyboard_check_pressed(vk_space);
 key_enter_hub = keyboard_check_pressed(ord('E'))
 key_commentme = keyboard_check(ord("V"));
 key_commentme1 = keyboard_check_pressed(ord("N"));
+key_go_back = keyboard_check_pressed(ord("M"));
+key_hub_unlcok = keyboard_check_pressed(ord("H"));
 
-//Cheats
+//Cheats delete them later
+if (key_go_back) {
+    room_goto_previous();
+}
+
 if key_commentme1 == true {
     room_goto_next();
 }
@@ -112,9 +118,14 @@ if key_commentme == true {
     vsp = -50;
 }
 
+if (key_hub_unlock) {
+    hub_unlocked += 1;
+}
+//End of cheats
+
 //Enter a level
-if (enter_hub != 0) &amp;&amp; (key_enter_hub) {
-    room_goto(enter_hub);
+if (hub_enter != 0) &amp;&amp; (key_enter_hub) { //If hub enter and the key is pressed enter the hub
+    room_goto(hub_enter);
 }
 
 //Melee
