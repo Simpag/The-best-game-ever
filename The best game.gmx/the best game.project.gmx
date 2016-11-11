@@ -37,7 +37,8 @@
       <sprite>sprites\spr_coin</sprite>
     </sprites>
     <sprites name="hub">
-      <sprite>sprites\hb_room_enter1</sprite>
+      <sprite>sprites\hb_room1_unlocked</sprite>
+      <sprite>sprites\hb_room1_locked</sprite>
       <sprite>sprites\hb_room_enter2</sprite>
       <sprite>sprites\hb_room_enter3</sprite>
       <sprite>sprites\hb_room_enter4</sprite>
