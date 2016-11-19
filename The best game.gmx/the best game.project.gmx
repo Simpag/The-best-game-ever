@@ -5,15 +5,21 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
-    <sound>sound\snd_player_jump</sound>
-    <sound>sound\snd_player_powerup</sound>
-    <sound>sound\snd_coin_pickup</sound>
-    <sound>sound\snd_player_lose_game</sound>
-    <sound>sound\snd_player_lose_life</sound>
-    <sound>sound\snd_save_point</sound>
-    <sound>sound\snd_background_normal</sound>
-    <sound>sound\snd_background_epic</sound>
-    <sound>sound\snd_background_hub</sound>
+    <sounds name="background">
+      <sound>sound\snd_background_epic</sound>
+      <sound>sound\snd_background_hub</sound>
+      <sound>sound\snd_background_normal</sound>
+    </sounds>
+    <sounds name="player">
+      <sound>sound\snd_player_lose_life</sound>
+      <sound>sound\snd_player_lose_game</sound>
+      <sound>sound\snd_player_powerup</sound>
+      <sound>sound\snd_player_jump</sound>
+    </sounds>
+    <sounds name="interactable">
+      <sound>sound\snd_save_point</sound>
+      <sound>sound\snd_coin_pickup</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprites name="Characters">
