@@ -7,4 +7,5 @@ if (global.checkpointR == room) { //If the checkpoint exists in the room
     }
 } else {
     room_restart(); //Else restart the room
+    audio_play_sound(snd_player_lose_life,2,0)
 }

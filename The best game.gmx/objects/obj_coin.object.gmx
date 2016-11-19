@@ -167,7 +167,8 @@ if (collect == 1) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Add money and destroy item
+            <string>//Add money and destroy item... play sound
+audio_play_sound(snd_coin_pickup,2,0)
 if (movespeed == 0) { //If the movespeed of the coin is equal to zero
     score += 10;
     instance_destroy();
