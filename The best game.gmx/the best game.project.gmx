@@ -63,6 +63,7 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_death.gml</script>
+    <script>scripts\scr_InitMenu.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_score</font>
@@ -93,6 +94,7 @@
       <object>objects\cont_health</object>
       <object>objects\obj_background_music</object>
       <object>objects\cont_spawnpoint</object>
+      <object>objects\obj_menu</object>
     </objects>
     <objects name="Hub">
       <object>objects\hb_room1</object>
@@ -103,6 +105,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_initialize</room>
+    <room>rooms\rm_main_menu</room>
     <room>rooms\rm_hub</room>
     <room>rooms\rm_lvl1</room>
     <room>rooms\rm_testing</room>
