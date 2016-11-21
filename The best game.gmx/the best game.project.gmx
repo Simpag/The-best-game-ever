@@ -17,8 +17,8 @@
       <sound>sound\snd_player_jump</sound>
     </sounds>
     <sounds name="interactable">
-      <sound>sound\snd_save_point</sound>
-      <sound>sound\snd_coin_pickup</sound>
+      <sound>sound\snd_interactable_save_point</sound>
+      <sound>sound\snd_interactable_coin_pickup</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
