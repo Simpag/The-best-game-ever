@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(obj_player) { //Set players location to spawnpoint
+            <string>instance_create(x, y, obj_player);
+with(obj_player) { //Set players location to spawnpoint
         x = cont_spawnpoint.x;
         y = (cont_spawnpoint.y)-(sprite_height/2);
 }

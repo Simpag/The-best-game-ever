@@ -25,9 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Create the player
-instance_create(x,y,obj_player);
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -55,9 +53,6 @@ if (playerHp &lt;= 0) {
 }
 
 if lives &lt;= 0 { //If lives is 0 then restart game 
-    with(obj_player) {
-        instance_destroy();
-    }
     room_goto(rm_hub);
     lives = max_lives;
 }
