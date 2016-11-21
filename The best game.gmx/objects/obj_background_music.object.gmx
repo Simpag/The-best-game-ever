@@ -31,7 +31,7 @@ global.effectsvolume = 1
 global.backgroundIsPlaying = false;
 
 
-if (backgroundIsPLaying == false)
+if (backgroundIsPlaying == false)
 {
 audio_play_sound(snd_background_normal,10,true)
 backgroundIsPlaying = true;
