@@ -1,6 +1,7 @@
 lives -= 1 //Remove one life
 instance_destroy();
 audio_play_sound(snd_player_lose_life,2,0)
+if (!instance_exists(obj_player)) instance_create(x,y,obj_player);
 
 if (global.checkpointR == room) { //If the checkpoint exists in the room
     with(obj_player) { //Set the player x and y to the checkpoint
