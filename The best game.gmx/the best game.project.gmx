@@ -92,6 +92,7 @@
       <object>objects\obj_score</object>
       <object>objects\cont_health</object>
       <object>objects\obj_background_music</object>
+      <object>objects\cont_spawnpoint</object>
     </objects>
     <objects name="Hub">
       <object>objects\hb_room1</object>

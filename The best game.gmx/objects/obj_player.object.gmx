@@ -45,6 +45,10 @@ jumpspeed = jumpspeed_normal;       //I coded before with jumpspeed as the varia
 
 wjumpsmax = 1;                      //maximum of wall jumps
 wjumps = 0;                         //Set used wall jumps to 0
+
+//Set players location to spawnpoint
+x = cont_spawnpoint.x;
+y = (cont_spawnpoint.y)-(sprite_height/2);
 </string>
           </argument>
         </arguments>
