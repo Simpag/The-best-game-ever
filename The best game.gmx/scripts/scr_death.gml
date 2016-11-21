@@ -7,4 +7,9 @@ if (global.checkpointR == room) { //If the checkpoint exists in the room
         x = global.checkpointx; //Setting the x to the checkpoint x when spawning.
         y = global.checkpointy; //Setting the y to the checkpoint y when spawning.
     }
+} else {
+    with(obj_player) { //Set players location to spawnpoint
+        x = cont_spawnpoint.x;
+        y = (cont_spawnpoint.y)-(sprite_height/2);
+    }
 }
