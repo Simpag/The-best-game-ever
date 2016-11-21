@@ -58,7 +58,7 @@ if lives &lt;= 0 { //If lives is 0 then restart game
     with(obj_player) {
         instance_destroy();
     }
-    room_goto(1);
+    room_goto(rm_hub);
     lives = max_lives;
 }
 </string>
