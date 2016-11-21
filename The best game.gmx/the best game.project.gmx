@@ -94,7 +94,7 @@
       <object>objects\cont_health</object>
       <object>objects\obj_background_music</object>
       <object>objects\cont_spawnpoint</object>
-      <object>objects\obj_menu</object>
+      <object>objects\cont_menu</object>
     </objects>
     <objects name="Hub">
       <object>objects\hb_room1</object>

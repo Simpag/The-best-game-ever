@@ -31,6 +31,29 @@
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>game_end();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -70,23 +93,60 @@ if (menuSelected &lt; 1) { //If the menuSelected is less then one, if you press 
 if (key_select) {
     switch(menuPage) {
         case 0: //Main menu
-        if (menuSelected = 1) { //Start Game
-            menuPage = 1; //Move to the Start game page
-            menuSelected = 1; //Set selected to top option
-        }
-        if (menuSelected = 2) show_message("Options"); //Options
-        if (menuSelected = 3) show_message("Instructions"); //Instructions
-        if (menuSelected = 4) show_message("Quit Game"); //Quit Game
+            if (menuSelected = 1) { //Start Game
+                menuPage = 1; //Move to the Start game page
+                menuSelected = 1; //Set selected to top option
+            }
+            
+            if (menuSelected = 2) { //Options
+                menuPage = 2; //Move to the Options page
+                menuSelected = 1; //Set selected to top option
+            }
+            
+            if (menuSelected = 3) { //Instructions
+                show_message("Instructions");
+            }
+            
+            if (menuSelected = 4) { //Quit Game
+                show_message("Game quits in 2 sec, press ok");
+                alarm[0] = 2 * room_speed;
+            }
         break; //End of main menu
-        
+//End of case 0
+
         case 1: //Start Game Submenu
-      if (menuSelected = 1) show_message("Save 1"); //Save 1
-      if (menuSelected = 2) show_message("Save 2"); //Save 2
-      if (menuSelected = 3) { //Go back
-        menuPage = 0; menuSelected = 1; 
-      }
-        break; //End of Game Submenu
-    }
+          if (menuSelected = 1) { //Save 1
+            show_message("Save 1"); 
+          } //End of save 1
+          
+          if (menuSelected = 2) { //Save 2
+            show_message("Save 2"); 
+          } //End of save 2
+          
+          if (menuSelected = 3) { //Go back
+            menuPage = 0; 
+            menuSelected = 1; 
+          } //End of back
+      break; //End of Start Game Submenu
+//End of case 1
+
+        case 2: //Start Game Submenu
+          if (menuSelected = 1) { //Master Volume
+            show_message("Master Volume"); 
+          } //End of Master Volume
+          
+          if (menuSelected = 2) { //Music Volume
+            show_message("Music Volume"); 
+          } //End of Music Volume
+          
+          if (menuSelected = 3) { //Go back
+            menuPage = 0; 
+            menuSelected = 1; 
+          } //End of back
+      break; //End of Options Submenu
+//End of case 2
+      
+    } //End of switch
 }
 //End of selection of menu
 </string>
