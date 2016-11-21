@@ -116,11 +116,13 @@ if (key_select) {
 
         case 1: //Start Game Submenu
           if (menuSelected = 1) { //Save 1
-            show_message("Save 1"); 
+            show_message("Save 1");
+            room_goto_next(); 
           } //End of save 1
           
           if (menuSelected = 2) { //Save 2
             show_message("Save 2"); 
+            room_goto_next(); 
           } //End of save 2
           
           if (menuSelected = 3) { //Go back
