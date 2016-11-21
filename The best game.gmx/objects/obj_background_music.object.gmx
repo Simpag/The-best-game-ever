@@ -28,8 +28,6 @@
             <string>global.mastervolume = 1
 global.musicvolume = 1
 global.effectsvolume = 1
-backgroundIsPlaying = false;
-
 
 if (backgroundIsPlaying == false)
 {
