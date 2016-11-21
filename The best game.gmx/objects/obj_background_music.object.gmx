@@ -28,11 +28,13 @@
             <string>global.mastervolume = 1
 global.musicvolume = 1
 global.effectsvolume = 1
+global.backgroundIsPlaying = false;
 
 
-if (!snd_background_normal = true)
+if (backgroundIsPLaying == false)
 {
 audio_play_sound(snd_background_normal,10,true)
+backgroundIsPlaying = true;
 }
 </string>
           </argument>
