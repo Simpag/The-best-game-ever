@@ -11,17 +11,27 @@ menuText[0,4] = "Quit Game"
 
 //End of main menu
 
-//Sub menus
+//Sub menu
     //Stat Game sub
-        menuText[1,0] = 3 //This is the same as above but for "Page 2" submenu for start game
+        menuText[1,0] = 3 //Amout of options to pick from
         menuText[1,1] = "Save 1 /Saves not added yet"
         menuText[1,2] = "Save 2 /Just starts game"
         menuText[1,3] = "Back"
+    //End of Start game sub
         
     //Options sub
-        menuText[2,0] = 3 //This is the same as above but for "Page 2" submenu for start game
-        menuText[2,1] = "Master Volume"
-        menuText[2,2] = "Music Volume"
+        menuText[2,0] = 3 //Amout of options to pick from
+        menuText[2,1] = "Volume"
+        menuText[2,2] = "Controls"
         menuText[2,3] = "Back"
-        
-//End of sub menus
+    //End of Options sub
+            
+//End of sub menu
+
+//Sub-sub menu
+    //volume sub-sub
+        menuText[3,0] = 1 //Amout of options to pick from
+        menuText[3,1] = "Back"
+    //End of volume sub-sub
+
+//End of sub-sub menu

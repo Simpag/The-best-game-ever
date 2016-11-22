@@ -115,42 +115,62 @@ if (key_select) {
 //End of case 0
 
         case 1: //Start Game Submenu
-          if (menuSelected = 1) { //Save 1
-            show_message("Save 1");
-            room_goto_next(); 
+            if (menuSelected = 1) { //Save 1
+                show_message("Save 1");
+                room_goto_next(); 
           } //End of save 1
           
-          if (menuSelected = 2) { //Save 2
-            show_message("Save 2"); 
-            room_goto_next(); 
+            if (menuSelected = 2) { //Save 2
+                show_message("Save 2"); 
+                room_goto_next(); 
           } //End of save 2
           
-          if (menuSelected = 3) { //Go back
-            menuPage = 0; 
-            menuSelected = 1; 
+            if (menuSelected = 3) { //Go back
+                menuPage = 0; 
+                menuSelected = 1; 
           } //End of back
       break; //End of Start Game Submenu
 //End of case 1
 
         case 2: //Options Game Submenu
-          if (menuSelected = 1) { //Master Volume
-            show_message("Master Volume"); 
+            if (menuSelected = 1) { //Volume
+                menuPage = 3; //Move to the Options page
+                menuSelected = 1; //Set selected to top option
           } //End of Master Volume
           
-          if (menuSelected = 2) { //Music Volume
-            show_message("Music Volume"); 
+            if (menuSelected = 2) { //test
+                show_message("Test"); 
           } //End of Music Volume
           
-          if (menuSelected = 3) { //Go back
-            menuPage = 0; 
-            menuSelected = 1; 
+            if (menuSelected = 3) { //Go back
+                menuPage = 0; 
+                menuSelected = 1; 
           } //End of back
       break; //End of Options Submenu
 //End of case 2
+
+        case 3: //Volume Submenu
+            if (menuSelected = 1) { //Go back
+                menuPage = 2; 
+                menuSelected = 1;
+                with(obj_master_volume) instance_destroy();
+          } //End of back
+      break; //End of Options Submenu
+//End of case 3
       
     } //End of switch
-}
-//End of selection of menu
+} //End of selection of menu
+
+if (menuPage == 3) { //Spawning the volume sliders
+        //Master volume
+            if (!instance_exists(obj_master_volume)) instance_create(200,200,obj_master_volume);
+        //End of Master volume
+        
+        //Music Volume
+
+        //End of Music Volume
+
+} //End of spawning volume sliders
 </string>
           </argument>
         </arguments>
@@ -183,6 +203,8 @@ for (i = 1; i &lt;= menuText[menuPage,0]; i+=1) { //Cycles through the menus, me
     } 
     draw_text(x, y+(i*font_size)-font_size, menuText[menuPage,i]); //Draws the menu text
 }
+
+draw_text(600, 600, string(instance_count))
 </string>
           </argument>
         </arguments>

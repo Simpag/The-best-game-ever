@@ -25,11 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.mastervolume = 1
-global.musicvolume = 1
-global.effectsvolume = 1
+            <string>global.mastervolume = 0.7; //Set the default volume between 0 - 1.
+global.musicvolume = 1; //Set the default music volume between 0 - 1.
+global.effectsvolume = 1; //Set the default effects volume between 0 - 1.
 
-if (!audio_is_playing(snd_background_normal)) {
+if (!audio_is_playing(snd_background_normal)) { //plays the background audio 
     audio_play_sound(snd_background_normal,10,true);
 }
 </string>

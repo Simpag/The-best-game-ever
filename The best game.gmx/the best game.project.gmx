@@ -58,6 +58,10 @@
       <sprite>sprites\hb_room_enter3</sprite>
       <sprite>sprites\hb_room_enter4</sprite>
     </sprites>
+    <sprites name="Main menu">
+      <sprite>sprites\spr_cont_mouse</sprite>
+      <sprite>sprites\spr_master_volume</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_background</background>
@@ -96,13 +100,17 @@
       <object>objects\cont_health</object>
       <object>objects\obj_background_music</object>
       <object>objects\cont_spawnpoint</object>
-      <object>objects\cont_menu</object>
     </objects>
     <objects name="Hub">
       <object>objects\hb_room1</object>
       <object>objects\hb_room2</object>
       <object>objects\hb_room3</object>
       <object>objects\hb_room4</object>
+    </objects>
+    <objects name="Main menu">
+      <object>objects\cont_menu</object>
+      <object>objects\obj_master_volume</object>
+      <object>objects\cont_mouse</object>
     </objects>
   </objects>
   <rooms name="rooms">
