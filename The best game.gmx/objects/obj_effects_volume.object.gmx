@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>starting_x = 1000; //Starting x pos
 slider_length = 350; //How long the bar should be in pixels
-x = starting_x + global.mastervolume * slider_length; // +volume is becuase when you'll save the volume it will load right
-y = 500; //Y pos
+x = starting_x + global.effectsvolume * slider_length; // +volume is becuase when you'll save the volume it will load right
+y = 700; //Y pos
 grabbing = false; //If you're grabbing the button
 </string>
           </argument>
@@ -52,22 +52,27 @@ grabbing = false; //If you're grabbing the button
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.isgrabbing == 0) || (global.isgrabbing == 1) {
-    if (((place_meeting(x, y, cont_mouse)) &amp;&amp; (mouse_check_button(mb_any))) || (global.isgrabbing == 1)) {
+            <string>if (global.isgrabbing == 0) || (global.isgrabbing == 3) {
+    if (((place_meeting(x, y, cont_mouse)) &amp;&amp; (mouse_check_button(mb_any))) || (global.isgrabbing == 3)) {
         x = mouse_x;
         grabbing = true;
-        global.isgrabbing = 1;
+        global.isgrabbing = 3;
     }
 }
 if ((mouse_check_button_released(mb_any)) || (global.effectsvolume &gt; 1) || (global.effectsvolume &lt; 0)) global.isgrabbing = 0;
 
-global.mastervolume = (x - starting_x)/slider_length;
+global.effectsvolume = (x - starting_x)/slider_length;
 
-if (global.mastervolume &lt;= 0) { x = (starting_x); global.mastervolume = 0; }
-if (global.mastervolume &gt;= 1) { x = (starting_x + slider_length); global.mastervolume = 1; }
+if (global.effectsvolume &lt;= 0) { x = (starting_x); global.effectsvolume = 0; }
+if (global.effectsvolume &gt;= 1) { x = (starting_x + slider_length); global.effectsvolume = 1; }
 
 //Controls Master Volume
-audio_master_gain(global.mastervolume)
+audio_sound_gain(snd_player_lose_life,global.effectsvolume,0)
+audio_sound_gain(snd_player_lose_game,global.effectsvolume,0)
+audio_sound_gain(snd_player_powerup,global.effectsvolume,0)
+audio_sound_gain(snd_player_jump,global.effectsvolume,0)
+audio_sound_gain(snd_interactable_save_point,global.effectsvolume,0)
+audio_sound_gain(snd_interactable_coin_pickup,global.effectsvolume,0)
 </string>
           </argument>
         </arguments>
@@ -91,7 +96,7 @@ audio_master_gain(global.mastervolume)
           <argument>
             <kind>1</kind>
             <string>draw_self();
-draw_text(starting_x+(slider_length/2), 450,"Master Volume: " + string(round(global.mastervolume * 100)));
+draw_text(starting_x+(slider_length/2), 650,"Effects Volume: " + string(round(global.effectsvolume * 100)));
 </string>
           </argument>
         </arguments>

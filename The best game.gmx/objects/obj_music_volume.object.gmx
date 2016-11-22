@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>starting_x = 1000; //Starting x pos
 slider_length = 350; //How long the bar should be in pixels
-x = starting_x + global.mastervolume * slider_length; // +volume is becuase when you'll save the volume it will load right
-y = 500; //Y pos
+x = starting_x + global.musicvolume * slider_length; // +volume is becuase when you'll save the volume it will load right
+y = 600; //Y pos
 grabbing = false; //If you're grabbing the button
 </string>
           </argument>
@@ -52,22 +52,22 @@ grabbing = false; //If you're grabbing the button
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.isgrabbing == 0) || (global.isgrabbing == 1) {
-    if (((place_meeting(x, y, cont_mouse)) &amp;&amp; (mouse_check_button(mb_any))) || (global.isgrabbing == 1)) {
+            <string>if (global.isgrabbing == 0) || (global.isgrabbing == 2) {
+    if (((place_meeting(x, y, cont_mouse)) &amp;&amp; (mouse_check_button(mb_any))) || (global.isgrabbing == 2)) {
         x = mouse_x;
         grabbing = true;
-        global.isgrabbing = 1;
+        global.isgrabbing = 2;
     }
 }
 if ((mouse_check_button_released(mb_any)) || (global.effectsvolume &gt; 1) || (global.effectsvolume &lt; 0)) global.isgrabbing = 0;
 
-global.mastervolume = (x - starting_x)/slider_length;
+global.musicvolume = (x - starting_x)/slider_length;
 
-if (global.mastervolume &lt;= 0) { x = (starting_x); global.mastervolume = 0; }
-if (global.mastervolume &gt;= 1) { x = (starting_x + slider_length); global.mastervolume = 1; }
+if (global.musicvolume &lt;= 0) { x = (starting_x); global.musicvolume = 0; }
+if (global.musicvolume &gt;= 1) { x = (starting_x + slider_length); global.musicvolume = 1; }
 
 //Controls Master Volume
-audio_master_gain(global.mastervolume)
+audio_sound_gain(snd_background_normal,global.musicvolume,0)
 </string>
           </argument>
         </arguments>
@@ -91,7 +91,7 @@ audio_master_gain(global.mastervolume)
           <argument>
             <kind>1</kind>
             <string>draw_self();
-draw_text(starting_x+(slider_length/2), 450,"Master Volume: " + string(round(global.mastervolume * 100)));
+draw_text(starting_x+(slider_length/2), 550,"Music Volume: " + string(round(global.musicvolume * 100)));
 </string>
           </argument>
         </arguments>

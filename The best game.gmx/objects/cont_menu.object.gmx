@@ -154,6 +154,8 @@ if (key_select) {
                 menuPage = 2; 
                 menuSelected = 1;
                 with(obj_master_volume) instance_destroy();
+                with(obj_music_volume) instance_destroy();
+                with(obj_effects_volume) instance_destroy();
           } //End of back
       break; //End of Options Submenu
 //End of case 3
@@ -162,13 +164,17 @@ if (key_select) {
 } //End of selection of menu
 
 if (menuPage == 3) { //Spawning the volume sliders
-        //Master volume
-            if (!instance_exists(obj_master_volume)) instance_create(200,200,obj_master_volume);
-        //End of Master volume
+    //Master volume
+        if (!instance_exists(obj_master_volume)) instance_create(0,0,obj_master_volume);
+    //End of Master volume
         
-        //Music Volume
-
-        //End of Music Volume
+    //Music Volume
+        if (!instance_exists(obj_music_volume)) instance_create(0,0,obj_music_volume);
+    //End of Music Volume
+    
+    //Effects Volume
+        if (!instance_exists(obj_effects_volume)) instance_create(0,0,obj_effects_volume);
+    //End of effects Volume
 
 } //End of spawning volume sliders
 </string>
@@ -203,8 +209,6 @@ for (i = 1; i &lt;= menuText[menuPage,0]; i+=1) { //Cycles through the menus, me
     } 
     draw_text(x, y+(i*font_size)-font_size, menuText[menuPage,i]); //Draws the menu text
 }
-
-draw_text(600, 600, string(instance_count))
 </string>
           </argument>
         </arguments>

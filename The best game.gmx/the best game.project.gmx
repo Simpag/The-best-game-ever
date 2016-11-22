@@ -98,7 +98,6 @@
     <objects name="Controllers">
       <object>objects\obj_score</object>
       <object>objects\cont_health</object>
-      <object>objects\obj_background_music</object>
       <object>objects\cont_spawnpoint</object>
     </objects>
     <objects name="Hub">
@@ -110,7 +109,10 @@
     <objects name="Main menu">
       <object>objects\cont_menu</object>
       <object>objects\obj_master_volume</object>
+      <object>objects\obj_music_volume</object>
+      <object>objects\obj_effects_volume</object>
       <object>objects\cont_mouse</object>
+      <object>objects\obj_background_music</object>
     </objects>
   </objects>
   <rooms name="rooms">
