@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>image_speed = 0;
 image_index = 0;
+double_sound = false;
 </string>
           </argument>
         </arguments>
@@ -56,11 +57,19 @@ if(place_meeting(x,y,obj_player)) {
     global.checkpointx = x;
     global.checkpointy = y;
     global.checkpointR = room;
-    audio_play_sound(snd_interactable_save_point,2,0)
+    if (!audio_is_playing(snd_interactable_save_point)) &amp;&amp; (double_sound == false){
+        audio_play_sound(snd_interactable_save_point,2,0);
+        double_sound = true;
+    }  
 }
 
 if (global.checkpointR == room) {
-    if (global.checkpoint == id) image_index = 1; else image_index = 0;
+    if (global.checkpoint == id) {
+        image_index = 1; 
+    } else {
+        image_index = 0; 
+        double_sound = false;
+    }
 }
 </string>
           </argument>

@@ -29,10 +29,8 @@
 global.musicvolume = 1
 global.effectsvolume = 1
 
-if (backgroundIsPlaying == false)
-{
-    audio_play_sound(snd_background_normal,10,true)
-    backgroundIsPlaying = true;
+if (!audio_is_playing(snd_background_normal)) {
+    audio_play_sound(snd_background_normal,10,true);
 }
 </string>
           </argument>
