@@ -111,7 +111,11 @@ alarm[0] = random_range(0.5, 1) * room_speed; //how far the coin travels
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Set depth
+            <string>if (!audio_is_playing(snd_interactable_coin_pickup)) {
+    coinisPlaying = false;
+}
+
+//Set depth
 depth = -y;
 
 hsp = dir * movespeed;
@@ -168,7 +172,11 @@ if (collect == 1) {
           <argument>
             <kind>1</kind>
             <string>//Add money and destroy item... play sound
-audio_play_sound(snd_interactable_coin_pickup,2,0)
+if (coinIsPlaying == false) {
+    coinIsPlaying = true;
+    audio_play_sound(snd_interactable_coin_pickup,2,0)
+}
+
 if (movespeed == 0) { //If the movespeed of the coin is equal to zero
     score += 10;
     instance_destroy();

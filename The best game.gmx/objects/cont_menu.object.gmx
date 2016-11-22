@@ -132,7 +132,7 @@ if (key_select) {
       break; //End of Start Game Submenu
 //End of case 1
 
-        case 2: //Start Game Submenu
+        case 2: //Options Game Submenu
           if (menuSelected = 1) { //Master Volume
             show_message("Master Volume"); 
           } //End of Master Volume
