@@ -24,9 +24,9 @@
   <sprites name="sprites">
     <sprites name="Characters">
       <sprite>sprites\spr_enemy</sprite>
-      <sprite>sprites\spr_player_powerup</sprite>
       <sprites name="Player">
         <sprite>sprites\spr_player_sleep</sprite>
+        <sprite>sprites\spr_player_powerup</sprite>
         <sprite>sprites\spr_player</sprite>
         <sprite>sprites\spr_player_melee</sprite>
         <sprite>sprites\spr_player_melee_hitbox</sprite>
@@ -63,9 +63,7 @@
       <sprite>sprites\spr_master_volume</sprite>
     </sprites>
   </sprites>
-  <backgrounds name="background">
-    <background>background\bg_background</background>
-  </backgrounds>
+  <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_death.gml</script>
@@ -119,8 +117,8 @@
     <room>rooms\rm_initialize</room>
     <room>rooms\rm_main_menu</room>
     <room>rooms\rm_hub</room>
+    <room>rooms\rm_tutorial</room>
     <room>rooms\rm_lvl1</room>
-    <room>rooms\rm_testing</room>
     <room>rooms\rm_lvl3</room>
     <room>rooms\rm_lvl4</room>
   </rooms>
