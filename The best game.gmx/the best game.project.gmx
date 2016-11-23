@@ -71,6 +71,7 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_score</font>
+    <font>fonts\fnt_totorial</font>
   </fonts>
   <objects name="objects">
     <objects name="Characters">
@@ -111,6 +112,11 @@
       <object>objects\obj_effects_volume</object>
       <object>objects\cont_mouse</object>
       <object>objects\obj_background_music</object>
+    </objects>
+    <objects name="Text">
+      <object>objects\obj_text_AD</object>
+      <object>objects\obj_text_S</object>
+      <object>objects\obj_text_W</object>
     </objects>
   </objects>
   <rooms name="rooms">
