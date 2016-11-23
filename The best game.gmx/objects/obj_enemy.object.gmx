@@ -126,7 +126,7 @@ if (place_meeting(x, y, obj_player)) {
         with (obj_player) {    
             playerHp -= obj_enemy.melee_damage;
             vsp = -3;
-            hsp = sign(x - other.x) * 3;
+            hsp = sign(x - other.x) * 5; 
         }
         attack = 0;
         alarm[0] = 2 * room_speed;

@@ -60,7 +60,7 @@ if(place_meeting(x,y,obj_player)) {
     if (!audio_is_playing(snd_interactable_save_point)) &amp;&amp; (double_sound == false){
         audio_play_sound(snd_interactable_save_point,2,0);
         double_sound = true;
-    }  
+    }
 }
 
 if (global.checkpointR == room) {

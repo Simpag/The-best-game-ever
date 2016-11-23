@@ -26,10 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>with(obj_player) {
-    power_up = true;
-    jumpspeed = jumpspeed_powerup;
-    sprite_index = spr_player_powerup;
-    alarm[0] = 300;
+    power_up = true; //Variable to know when powerup is on
+    jumpspeed = jumpspeed_powerup; //Change the jumpspeed
+    sprite_index = spr_player_powerup;  //Change the sprite
+    alarm[0] = 300; //Turn off the powerup
 }
 audio_play_sound(snd_player_powerup,2,0)
 

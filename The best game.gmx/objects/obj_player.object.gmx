@@ -39,7 +39,7 @@ hub_enter = 0;                      //If the player can enter a room
 
 //Junmp vars
 jumpspeed_normal = 6;               //Jump height on normal
-jumpspeed_powerup =8;               //Jump height when powered up
+jumpspeed_powerup = 8;              //Jump height when powered up
 
 jumpspeed = jumpspeed_normal;       //I coded before with jumpspeed as the variable so dnt want to chnage the other code. 
 
@@ -70,6 +70,7 @@ wjumps = 0;                         //Set used wall jumps to 0
             <string>with(obj_player) {
     jumpspeed = jumpspeed_normal;
     sprite_index = spr_player;
+    power_up = false;
 }
 </string>
           </argument>
@@ -143,7 +144,7 @@ if (key_melee) {
         with (instance_place(x,y,obj_enemy)) {
             if (hit == 0) {
                 hit = 1;
-                vsp = -3;
+                vsp = -5 * obj_player.facing;
                 hsp = sign(x - other.x) * 2;
                 image_xscale = sign(hsp);
             }
