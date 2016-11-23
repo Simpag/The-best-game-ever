@@ -28,7 +28,7 @@
             <string>starting_x = 1000; //Starting x pos
 slider_length = 350; //How long the bar should be in pixels
 x = starting_x + global.musicvolume * slider_length; // +volume is becuase when you'll save the volume it will load right
-y = 600; //Y pos
+y = 214; //Y pos
 grabbing = false; //If you're grabbing the button
 </string>
           </argument>
@@ -91,7 +91,8 @@ audio_sound_gain(snd_background_normal,global.musicvolume,0)
           <argument>
             <kind>1</kind>
             <string>draw_self();
-draw_text(starting_x+(slider_length/2), 550,"Music Volume: " + string(round(global.musicvolume * 100)));
+draw_set_color(c_black)
+draw_text(starting_x+(slider_length/2), 164,"Music Volume: " + string(round(global.musicvolume * 100)));
 </string>
           </argument>
         </arguments>

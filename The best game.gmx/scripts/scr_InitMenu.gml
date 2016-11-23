@@ -3,11 +3,11 @@ menuSelected = 1; //To know which menu is selected
 menuPage = 0; //Same as above but page
 
 //Main menu
-menuText[0,0] = 4; //Amout of options to pick
-menuText[0,1] = "Start Game"
-menuText[0,2] = "Options"
-menuText[0,3] = "Instructions"
-menuText[0,4] = "Quit Game"
+    menuText[0,0] = 4; //Amout of options to pick
+    menuText[0,1] = "Start Game"
+    menuText[0,2] = "Options"
+    menuText[0,3] = "Instructions"
+    menuText[0,4] = "Quit Game"
 
 //End of main menu
 

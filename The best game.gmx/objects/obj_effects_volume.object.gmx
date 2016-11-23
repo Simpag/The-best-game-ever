@@ -28,7 +28,7 @@
             <string>starting_x = 1000; //Starting x pos
 slider_length = 350; //How long the bar should be in pixels
 x = starting_x + global.effectsvolume * slider_length; // +volume is becuase when you'll save the volume it will load right
-y = 700; //Y pos
+y = 314; //Y pos
 grabbing = false; //If you're grabbing the button
 </string>
           </argument>
@@ -96,7 +96,8 @@ audio_sound_gain(snd_interactable_coin_pickup,global.effectsvolume,0)
           <argument>
             <kind>1</kind>
             <string>draw_self();
-draw_text(starting_x+(slider_length/2), 650,"Effects Volume: " + string(round(global.effectsvolume * 100)));
+draw_set_color(c_black)
+draw_text(starting_x+(slider_length/2), 264,"Effects Volume: " + string(round(global.effectsvolume * 100)));
 </string>
           </argument>
         </arguments>

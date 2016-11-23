@@ -33,29 +33,6 @@ scr_addClickables();
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>game_end();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -73,23 +50,7 @@ scr_addClickables();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>key_down = keyboard_check_pressed(ord("S"));
-key_up = keyboard_check_pressed(ord("W"));
-key_select = mouse_check_button_pressed(mb_any);
-
-//Move in the menu
-if (key_up) menuSelected -= 1; //Move up in menu
-if (key_down) menuSelected += 1; //Move down in menu
-
-if (menuSelected &lt; 1) { //If the menuSelected is less then one, if you press up at the first option, set the menu to the last option. So it wraps around.
-    menuSelected = menuText[menuPage,0];
-} else { 
-    if (menuSelected &gt; menuText[menuPage,0]) { //Same as above but the other way round
-        menuSelected = 1;
-    }
-}
-//End of move in menu
-
+            <string>key_select = mouse_check_button_pressed(mb_any);
 
 //Selection of menu
 if (key_select) {
@@ -98,14 +59,12 @@ if (key_select) {
             if (menuSelected = 1) { //Start Game
                 scr_removeClickables();
                 menuPage = 1; //Move to the Start game page
-                menuSelected = 1; //Set selected to top option
                 scr_addClickables();
             }
             
             if (menuSelected = 2) { //Options
                 scr_removeClickables();
                 menuPage = 2; //Move to the Options page
-                menuSelected = 1; //Set selected to top option
                 scr_addClickables();
             }
             
@@ -114,8 +73,7 @@ if (key_select) {
             }
             
             if (menuSelected = 4) { //Quit Game
-                show_message("Game quits in 2 sec, press ok");
-                alarm[0] = 2 * room_speed;
+                game_end();
             }
         break; //End of main menu
 //End of case 0
@@ -134,7 +92,6 @@ if (key_select) {
             if (menuSelected = 3) { //Go back
                 scr_removeClickables();
                 menuPage = 0; 
-                menuSelected = 1; 
                 scr_addClickables();
           } //End of back
       break; //End of Start Game Submenu
@@ -142,8 +99,9 @@ if (key_select) {
 
         case 2: //Options Game Submenu
             if (menuSelected = 1) { //Volume
+                scr_removeClickables();
                 menuPage = 3; //Move to the Volume page
-                menuSelected = 1; //Set selected to top option
+                scr_addClickables();
           } //End of Master Volume
           
             if (menuSelected = 2) { //test
@@ -153,7 +111,6 @@ if (key_select) {
             if (menuSelected = 3) { //Go back
                 scr_removeClickables();
                 menuPage = 0; 
-                menuSelected = 1; 
                 scr_addClickables();
           } //End of back
       break; //End of Options Submenu
@@ -173,7 +130,21 @@ if (key_select) {
     } //End of switch
 } //End of selection of menu
 
+//Spawning the volume sliders
+if (menuPage == 3) { 
+    //Master volume
+        if (!instance_exists(obj_master_volume)) instance_create(0,0,obj_master_volume);
+    //End of Master volume
+        
+    //Music Volume
+        if (!instance_exists(obj_music_volume)) instance_create(0,0,obj_music_volume);
+    //End of Music Volume
+    
+    //Effects Volume
+        if (!instance_exists(obj_effects_volume)) instance_create(0,0,obj_effects_volume);
+    //End of effects Volume
 
+} //End of spawning volume sliders
 </string>
           </argument>
         </arguments>
@@ -210,9 +181,6 @@ for (i = 1; i &lt;= menuText[menuPage,0]; i+=1) { //Cycles through the menus, me
     if (menuText[menuPage,0] == 1) { divd = 2 } else { divd = menuText[menuPage,0] }
     draw_text(room_width/2, room_height/divd+(i*1.5*font_size), menuText[menuPage,i]); //Draws the menu text
 }
-
-draw_text(200, 200, string(menuSelected));
-
 </string>
           </argument>
         </arguments>
