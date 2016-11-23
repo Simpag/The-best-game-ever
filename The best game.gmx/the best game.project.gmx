@@ -38,6 +38,7 @@
       <sprite>sprites\spr_powerup</sprite>
       <sprite>sprites\spr_portal</sprite>
       <sprite>sprites\spr_save</sprite>
+      <sprite>sprites\spr_walljump</sprite>
       <sprite>sprites\spr_oneway</sprite>
       <sprite>sprites\spr_ground_dead</sprite>
       <sprites name="Healthbar">
@@ -89,6 +90,7 @@
       <object>objects\obj_oneway</object>
       <object>objects\obj_ground_dead</object>
       <object>objects\obj_save</object>
+      <object>objects\obj_walljump</object>
     </objects>
     <objects name="Active objects">
       <object>objects\obj_oneway_moving</object>

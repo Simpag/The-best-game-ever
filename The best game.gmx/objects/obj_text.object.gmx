@@ -48,17 +48,38 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_color(c_white); //what color
+            <string>if room = rm_tutorial
+{
+draw_set_color(c_red); //what color
 draw_set_font(fnt_totorial); //what font
-draw_text(96,96,"press A and D to walk"); //what to say
+draw_text(192,64,"   press A and D to walk"); //what to say
 
-draw_set_color(c_white); //what color
-draw_set_font(fnt_totorial); //what font
-draw_text(320,96,"pess S to go down"); //what to say
+draw_text(256,32,"pess S to go down"); //what to say
 
-draw_set_color(c_white); //what color
-draw_set_font(fnt_totorial); //what font
-draw_text(192,352,"press W to jump"); //what to say
+draw_text(192,320,"press W to jump"); //what to say
+
+draw_text(32,480,"beware there is one opponent"); //what to say
+
+draw_text(32,512," he can hurt you"); //what to say
+
+draw_text(64,640,"enemys drop coins") //what to say
+
+draw_text(384,512,"   time to wall jump") //what to say
+
+draw_text(384,544,"you can only wall jump") //what to say
+
+draw_text(384,576,"    on red walls") //what to say
+
+draw_text(640,32,"this is a checkpoint!")
+
+draw_text(992,576,"      this is a powerup") //what to say
+
+draw_text(960,608,"it will increase you jump power") //what to say
+
+draw_text(1088,32,"this will take you") //what to say
+
+draw_text(1088,64,"to the next level") //what to say
+}
 </string>
           </argument>
         </arguments>
