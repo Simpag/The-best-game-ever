@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>sprite_index = -1
-
+depth = -10
 </string>
           </argument>
         </arguments>
