@@ -143,6 +143,8 @@ y += vsp
 if (collect == 1) {
     if distance_to_object(obj_player) &lt; 6 {
         move_towards_point(obj_player.x, obj_player.y, 2);
+    } else {
+        speed = 0;
     }
 }
 </string>
