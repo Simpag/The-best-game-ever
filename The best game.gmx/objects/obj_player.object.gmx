@@ -162,13 +162,13 @@ if (place_meeting(x, y+1, obj_ground)) &amp;&amp; (key_jump) {
 //End of normal ground jumping
 
 //Reseting wall jumps in the air
-if (!place_meeting(x+1, y, obj_ground)) &amp;&amp; (!place_meeting(x-1, y, obj_ground)) &amp;&amp; (!place_meeting(x, y + 1, obj_ground)) {
+if ((!place_meeting(x+6, y, obj_ground)) &amp;&amp; (!place_meeting(x-6, y, obj_ground))) || (place_meeting(x, y + 1, obj_ground)){
     wjumps = wjumpsmax;
 }
 //End of reseting wall jumps in the air
 
 //Walljump
-if (key_jump) &amp;&amp; (place_meeting(x+1, y, obj_ground) || place_meeting(x-1, y, obj_ground)) &amp;&amp; (wjumps &gt; 0) {
+if (key_jump) &amp;&amp; (place_meeting(x+5, y, obj_ground) || place_meeting(x-5, y, obj_ground)) &amp;&amp; (wjumps &gt; 0) &amp;&amp; (!place_meeting(x, y + 1, obj_ground)) {
     wjumps -= 1;
     vsp = -jumpspeed;
     audio_play_sound(snd_player_jump,1,0);
