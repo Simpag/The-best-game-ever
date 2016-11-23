@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto_next();
+            <string>room_goto(rm_hub);
+hub_unlocked += 1;
 </string>
           </argument>
         </arguments>
