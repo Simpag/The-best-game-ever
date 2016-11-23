@@ -114,9 +114,7 @@
       <object>objects\obj_background_music</object>
     </objects>
     <objects name="Text">
-      <object>objects\obj_text_AD</object>
-      <object>objects\obj_text_S</object>
-      <object>objects\obj_text_W</object>
+      <object>objects\obj_text</object>
     </objects>
   </objects>
   <rooms name="rooms">

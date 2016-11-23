@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>depth = 10
+            <string>depth = -100 //djup -framot +backot
 </string>
           </argument>
         </arguments>
@@ -50,7 +50,15 @@
             <kind>1</kind>
             <string>draw_set_color(c_white); //what color
 draw_set_font(fnt_totorial); //what font
-draw_text(x,y,"press A and D to walk"); //what to say
+draw_text(96,96,"press A and D to walk"); //what to say
+
+draw_set_color(c_white); //what color
+draw_set_font(fnt_totorial); //what font
+draw_text(320,96,"pess S to go down"); //what to say
+
+draw_set_color(c_white); //what color
+draw_set_font(fnt_totorial); //what font
+draw_text(192,352,"press W to jump"); //what to say
 </string>
           </argument>
         </arguments>
