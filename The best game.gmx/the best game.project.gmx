@@ -62,6 +62,7 @@
     <sprites name="Main menu">
       <sprite>sprites\spr_cont_mouse</sprite>
       <sprite>sprites\spr_master_volume</sprite>
+      <sprite>sprites\spr_menuselected</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
@@ -69,10 +70,13 @@
   <scripts name="scripts">
     <script>scripts\scr_death.gml</script>
     <script>scripts\scr_InitMenu.gml</script>
+    <script>scripts\scr_addClickables.gml</script>
+    <script>scripts\scr_removeClickables.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_score</font>
     <font>fonts\fnt_totorial</font>
+    <font>fonts\fnt_main_menu</font>
   </fonts>
   <objects name="objects">
     <objects name="Characters">
@@ -114,6 +118,10 @@
       <object>objects\obj_effects_volume</object>
       <object>objects\cont_mouse</object>
       <object>objects\obj_background_music</object>
+      <object>objects\obj_menuselected_1</object>
+      <object>objects\obj_menuselected_2</object>
+      <object>objects\obj_menuselected_3</object>
+      <object>objects\obj_menuselected_4</object>
     </objects>
     <objects name="Text">
       <object>objects\obj_text</object>

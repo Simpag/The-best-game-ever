@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_InitMenu();
+            <string>font_size = 64; //Change this font size if you change the font.
+scr_InitMenu();
+scr_addClickables();
 </string>
           </argument>
         </arguments>
@@ -73,7 +75,7 @@
             <kind>1</kind>
             <string>key_down = keyboard_check_pressed(ord("S"));
 key_up = keyboard_check_pressed(ord("W"));
-key_select = keyboard_check_pressed(vk_space);
+key_select = mouse_check_button_pressed(mb_any);
 
 //Move in the menu
 if (key_up) menuSelected -= 1; //Move up in menu
@@ -94,13 +96,17 @@ if (key_select) {
     switch(menuPage) {
         case 0: //Main menu
             if (menuSelected = 1) { //Start Game
+                scr_removeClickables();
                 menuPage = 1; //Move to the Start game page
                 menuSelected = 1; //Set selected to top option
+                scr_addClickables();
             }
             
             if (menuSelected = 2) { //Options
+                scr_removeClickables();
                 menuPage = 2; //Move to the Options page
                 menuSelected = 1; //Set selected to top option
+                scr_addClickables();
             }
             
             if (menuSelected = 3) { //Instructions
@@ -126,15 +132,17 @@ if (key_select) {
           } //End of save 2
           
             if (menuSelected = 3) { //Go back
+                scr_removeClickables();
                 menuPage = 0; 
                 menuSelected = 1; 
+                scr_addClickables();
           } //End of back
       break; //End of Start Game Submenu
 //End of case 1
 
         case 2: //Options Game Submenu
             if (menuSelected = 1) { //Volume
-                menuPage = 3; //Move to the Options page
+                menuPage = 3; //Move to the Volume page
                 menuSelected = 1; //Set selected to top option
           } //End of Master Volume
           
@@ -143,19 +151,21 @@ if (key_select) {
           } //End of Music Volume
           
             if (menuSelected = 3) { //Go back
+                scr_removeClickables();
                 menuPage = 0; 
                 menuSelected = 1; 
+                scr_addClickables();
           } //End of back
       break; //End of Options Submenu
 //End of case 2
 
         case 3: //Volume Submenu
+        scr_addClickables();
             if (menuSelected = 1) { //Go back
+                scr_removeClickables();
                 menuPage = 2; 
                 menuSelected = 1;
-                with(obj_master_volume) instance_destroy();
-                with(obj_music_volume) instance_destroy();
-                with(obj_effects_volume) instance_destroy();
+                scr_addClickables();
           } //End of back
       break; //End of Options Submenu
 //End of case 3
@@ -163,20 +173,7 @@ if (key_select) {
     } //End of switch
 } //End of selection of menu
 
-if (menuPage == 3) { //Spawning the volume sliders
-    //Master volume
-        if (!instance_exists(obj_master_volume)) instance_create(0,0,obj_master_volume);
-    //End of Master volume
-        
-    //Music Volume
-        if (!instance_exists(obj_music_volume)) instance_create(0,0,obj_music_volume);
-    //End of Music Volume
-    
-    //Effects Volume
-        if (!instance_exists(obj_effects_volume)) instance_create(0,0,obj_effects_volume);
-    //End of effects Volume
 
-} //End of spawning volume sliders
 </string>
           </argument>
         </arguments>
@@ -199,16 +196,23 @@ if (menuPage == 3) { //Spawning the volume sliders
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>font_size = 16; //Change this font size if you change the font. 
+            <string>draw_set_font(fnt_main_menu); 
 
 for (i = 1; i &lt;= menuText[menuPage,0]; i+=1) { //Cycles through the menus, menuText[0] = 4 so it will stop at menu 4.
     if (menuSelected = i) {
         draw_set_color(c_red); //If selected draw red
     } else {   
        draw_set_color(c_black); //Else draw black
-    } 
-    draw_text(x, y+(i*font_size)-font_size, menuText[menuPage,i]); //Draws the menu text
+    }
+    var divd;
+    draw_set_halign(fa_center);
+    draw_set_valign(fa_middle);
+    if (menuText[menuPage,0] == 1) { divd = 2 } else { divd = menuText[menuPage,0] }
+    draw_text(room_width/2, room_height/divd+(i*1.5*font_size), menuText[menuPage,i]); //Draws the menu text
 }
+
+draw_text(200, 200, string(menuSelected));
+
 </string>
           </argument>
         </arguments>
