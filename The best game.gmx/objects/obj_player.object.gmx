@@ -28,14 +28,14 @@
             <string>///initialize variables
 grav = 0.2;                         //Gravity amount
 hsp = 0;                            //Set horizontal speed to 0, standing still.
-vsp = 0;                            // Same as above but vertical
+vsp = 0;                            //Same as above but vertical
 movespeed = 4;                      //Move speed
 movedecrease = 0.9;                 //Move speed decrease on each frame
 moveincrease = 0.3;                 //Move speed increase on each fram
 facing = 1;                         //Variable to know which dir player is facing
 melee_damage = 50;                  //Player damage / meele
 power_up = false;                   //If the player has a power_up
-hub_enter = 0;                      //If the player can enter a room
+hub_enter = 0;                      //If the player can enter a room                 
 
 //Junmp vars
 jumpspeed_normal = 6;               //Jump height on normal
@@ -168,7 +168,7 @@ if ((!place_meeting(x+6, y, obj_ground)) &amp;&amp; (!place_meeting(x-6, y, obj_
 //End of reseting wall jumps in the air
 
 //Walljump
-if (key_jump) &amp;&amp; (place_meeting(x+5, y, obj_ground) || place_meeting(x-5, y, obj_ground)) &amp;&amp; (wjumps &gt; 0) &amp;&amp; (!place_meeting(x, y + 1, obj_ground)) {
+if (key_jump) &amp;&amp; (place_meeting(x+5, y, obj_ground) || place_meeting(x-5, y, obj_ground)) &amp;&amp; (wjumps &gt; 0) &amp;&amp; (!place_meeting(x, y + 1, obj_ground)) {  
     wjumps -= 1;
     vsp = -jumpspeed;
     audio_play_sound(snd_player_jump,1,0);
