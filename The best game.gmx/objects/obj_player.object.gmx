@@ -6,7 +6,7 @@
   <depth>1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>spr_player123</maskName>
+  <maskName>spr_player</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
