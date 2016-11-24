@@ -34,11 +34,11 @@
     </sprites>
     <sprites name="Static objects">
       <sprite>sprites\spr_ground</sprite>
+      <sprite>sprites\spr_ground_2</sprite>
       <sprite>sprites\spr_flying_ground</sprite>
       <sprite>sprites\spr_powerup</sprite>
       <sprite>sprites\spr_portal</sprite>
       <sprite>sprites\spr_save</sprite>
-      <sprite>sprites\spr_walljump</sprite>
       <sprite>sprites\spr_oneway</sprite>
       <sprite>sprites\spr_ground_dead</sprite>
       <sprites name="Healthbar">
@@ -89,12 +89,12 @@
     </objects>
     <objects name="Static objects">
       <object>objects\obj_ground</object>
+      <object>objects\obj_ground_2</object>
       <object>objects\obj_powerup</object>
       <object>objects\obj_portal</object>
       <object>objects\obj_oneway</object>
       <object>objects\obj_ground_dead</object>
       <object>objects\obj_save</object>
-      <object>objects\obj_walljump</object>
     </objects>
     <objects name="Active objects">
       <object>objects\obj_oneway_moving</object>
@@ -130,8 +130,8 @@
   <rooms name="rooms">
     <room>rooms\rm_initialize</room>
     <room>rooms\rm_main_menu</room>
-    <room>rooms\rm_hub</room>
     <room>rooms\rm_tutorial</room>
+    <room>rooms\rm_hub</room>
     <room>rooms\rm_lvl1</room>
     <room>rooms\rm_lvl2</room>
     <room>rooms\rm_lvl3</room>
