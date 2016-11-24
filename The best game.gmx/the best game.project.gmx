@@ -27,6 +27,7 @@
       <sprites name="Player">
         <sprite>sprites\spr_player_sleep</sprite>
         <sprite>sprites\spr_player_powerup</sprite>
+        <sprite>sprites\spr_player123</sprite>
         <sprite>sprites\spr_player</sprite>
         <sprite>sprites\spr_player_melee</sprite>
         <sprite>sprites\spr_player_melee_hitbox</sprite>

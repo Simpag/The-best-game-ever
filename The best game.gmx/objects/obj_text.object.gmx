@@ -80,6 +80,21 @@ draw_text(1088,32,"this will take you") //what to say
 
 draw_text(1088,64,"to the next level") //what to say
 }
+
+if room = rm_hub
+{
+draw_set_color(c_red); //what color
+draw_set_font(fnt_totorial); //what font
+draw_text(296,952,"press E to enter level"); //what to say
+
+draw_text(600,896,"level 1"); //what to say
+
+draw_text(895,896,"level 2"); //what to say
+
+draw_text(1192,896,"level 3"); //what to say
+
+draw_text(1488,896,"level 4"); //what to say
+}
 </string>
           </argument>
         </arguments>
