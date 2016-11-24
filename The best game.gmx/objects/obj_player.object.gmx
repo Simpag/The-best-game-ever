@@ -19,7 +19,7 @@
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>other</whoName>
+        <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -46,6 +46,7 @@ jumpspeed = jumpspeed_normal;       //I coded before with jumpspeed as the varia
 wjumpsmax = 1;                      //maximum of wall jumps
 wjumps = 0;                         //Set used wall jumps to 0
 wjumpsd = 0;                        //Makes sure that the player wont jump twice on one wall
+wjumpsd2 = 0;                       //For the ground objects
 </string>
           </argument>
         </arguments>
@@ -169,12 +170,10 @@ if ((!place_meeting(x+6, y, obj_ground)) &amp;&amp; (!place_meeting(x-6, y, obj_
 //End of reseting wall jumps in the air
 
 //Walljump
-if (key_jump) &amp;&amp; (place_meeting(x+5, y, obj_ground) || place_meeting(x-5, y, obj_ground)) &amp;&amp; (wjumps &gt; 0) &amp;&amp; (!place_meeting(x, y + 1, obj_ground)) {  
-    if (wjumpsd == 1) || (wjumpsd == 2) {
+if (key_jump) &amp;&amp; (place_meeting(x+5, y, obj_ground) || place_meeting(x-5, y, obj_ground)) &amp;&amp; (wjumps &gt; 0) &amp;&amp; (!place_meeting(x, y + 1, obj_ground)) &amp;&amp; (wjumpsd == 0) {  
         wjumps -= 1;
         vsp = -jumpspeed;
         audio_play_sound(snd_player_jump,1,0);
-    }
 }
 //End of walljump
 
