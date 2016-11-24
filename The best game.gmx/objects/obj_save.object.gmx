@@ -55,7 +55,7 @@ double_sound = false;
 if(place_meeting(x,y,obj_player)) {
     global.checkpoint = id;
     global.checkpointx = x;
-    global.checkpointy = y;
+    global.checkpointy = y - (obj_player.sprite_height/2);
     global.checkpointR = room;
     if (!audio_is_playing(snd_interactable_save_point)) &amp;&amp; (double_sound == false){
         audio_play_sound(snd_interactable_save_point,2,0);

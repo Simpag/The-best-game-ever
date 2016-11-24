@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1000000</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>x = obj_player.x;
+y = obj_player.y;
+</string>
           </argument>
         </arguments>
       </action>
@@ -47,37 +49,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//When the player dies
-if (playerHp &lt;= 0) {
-    scr_death();
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>// Player Healthbar
-draw_sprite(spr_healthbar_bg, 1, view_xview[0] + 41, view_yview[0] + 29);
-draw_sprite_ext(spr_healthbar_inner, 1, view_xview[0] + 41, view_yview[0] + 29, playerHp/100, 1, 0, c_white, 1);
-draw_sprite(spr_healthbar_border, 1, view_xview[0] + 10, view_yview[0] + 10);
-
+            <string>x += (obj_player.x-x)/20;
+y += (obj_player.y-y)/20;
 </string>
           </argument>
         </arguments>

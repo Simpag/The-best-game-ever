@@ -74,7 +74,7 @@ draw_text(640,32,"this is a checkpoint!")
 
 draw_text(992,576,"      this is a powerup") //what to say
 
-draw_text(960,608,"it will increase you jump power") //what to say
+draw_text(960,608,"it will increase you jump height") //what to say
 
 draw_text(1088,32,"this will take you") //what to say
 

@@ -123,8 +123,8 @@ if (hit == 1) {
 
 if (place_meeting(x, y, obj_player)) {
     if (attack == 1) {
+        playerHp -= melee_damage;
         with (obj_player) {    
-            playerHp -= obj_enemy.melee_damage;
             vsp = -3;
             hsp = sign(x - other.x) * 5; 
         }

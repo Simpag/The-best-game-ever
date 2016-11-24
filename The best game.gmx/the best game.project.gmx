@@ -104,6 +104,7 @@
       <object>objects\obj_score</object>
       <object>objects\cont_health</object>
       <object>objects\cont_spawnpoint</object>
+      <object>objects\cont_view</object>
     </objects>
     <objects name="Hub">
       <object>objects\hb_room1</object>
