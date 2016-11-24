@@ -74,7 +74,7 @@
             <string>if (hub_unlocked &gt;= 1) {
     sprite_index = hb_room1_unlocked; //Sets the sprite to unlocked if it is
     if (place_meeting(x, y, obj_player)) {
-        with(obj_player) hub_enter = rm_lvl1; //Which room
+        with(obj_player) hub_enter = rm_tutorial; //Which room
     } else {
         with(obj_player) hub_enter = 0; //Makes it so the enter hub key in player does nothing
     }
