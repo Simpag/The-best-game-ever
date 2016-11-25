@@ -78,6 +78,12 @@
       <script>scripts\scr_melee.gml</script>
       <script>scripts\scr_jump.gml</script>
       <script>scripts\scr_normal.gml</script>
+      <script>scripts\scr_movement.gml</script>
+      <script>scripts\scr_idle.gml</script>
+      <scripts name="sub">
+        <script>scripts\scr_collision.gml</script>
+        <script>scripts\scr_inputs.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <fonts name="fonts">
