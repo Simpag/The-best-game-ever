@@ -145,10 +145,6 @@
     <instance objName="obj_ground_2" x="960" y="320" name="inst_C2BD95FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ground_2" x="960" y="288" name="inst_B8552C6C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ground_2" x="960" y="256" name="inst_997437ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_ground_dead" x="928" y="384" name="inst_A355748C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="obj_ground_dead" x="928" y="416" name="inst_CC61136B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="90"/>
-    <instance objName="obj_ground_dead" x="800" y="160" name="inst_724C4538" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
-    <instance objName="obj_ground_dead" x="800" y="192" name="inst_22ECB912" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="270"/>
     <instance objName="obj_ground_dead" x="160" y="256" name="inst_B61D16FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ground_dead" x="192" y="256" name="inst_F8BA9F5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ground_dead" x="128" y="256" name="inst_CC0B59EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
