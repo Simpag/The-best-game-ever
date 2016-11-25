@@ -16,7 +16,7 @@ global.checkpointx = 0;
 global.checkpointy = 0;
 globalvar playerHp, hub_unlocked, max_lives; 
 playerHp = 100;// Player hp
-hub_unlocked = 0; //If any doors are unlocked
+hub_unlocked = 1; //If any doors are unlocked
 max_lives = 3; //Maxiumum amout of lives when the player dies or respawns
 lives = max_lives; //Sets the lives
 score = 0;

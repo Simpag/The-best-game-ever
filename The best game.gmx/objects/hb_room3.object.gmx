@@ -30,7 +30,7 @@
     if (place_meeting(x, y, obj_player)) {
         with(obj_player) hub_enter = rm_lvl2; //Which room
     } else {
-        with(obj_player) hub_enter = 0; //Makes it so the enter hub key in player does nothing
+        with(obj_player) if (hub_enter = rm_lvl2) hub_enter = 0; //Makes it so the enter hub key in player does nothing
     }
 } else {
     sprite_index = hb_room1_locked; //Sets locked sprite if its locked
