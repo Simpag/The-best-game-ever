@@ -50,6 +50,9 @@ wjumpsd2 = 0;                       //For the ground objects
 
 //Initiate Camera
 instance_create(x, y, cont_view);
+
+//Remove
+sprite = 1;
 </string>
           </argument>
         </arguments>
@@ -239,6 +242,19 @@ if (place_meeting(x, y + vsp, obj_ground)){ //if its on the ground
 //Write movement code above this
 x += hsp //Add the hsp to x to move the player
 y += vsp //Same as the x position but with vertical speed.
+
+//remove
+if (sprite = 1) {
+    sprite_index = spr_Hanzo;
+}
+
+if (sprite = 2) {
+    sprite_index = spr_Genji;
+}
+
+if (sprite = 3) {
+    sprite_index = spr_player;
+}
 </string>
           </argument>
         </arguments>
@@ -287,7 +303,8 @@ if (sprite_index == spr_player_melee) /*insert powerup sprite here*/ {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>sprite_index = 
+            <string>sprite += 1;
+if (sprite == 4) sprite = 1;
 </string>
           </argument>
         </arguments>
