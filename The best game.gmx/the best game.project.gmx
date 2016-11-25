@@ -74,6 +74,11 @@
     <script>scripts\scr_InitMenu.gml</script>
     <script>scripts\scr_addClickables.gml</script>
     <script>scripts\scr_removeClickables.gml</script>
+    <scripts name="player">
+      <script>scripts\scr_melee.gml</script>
+      <script>scripts\scr_jump.gml</script>
+      <script>scripts\scr_normal.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_score</font>

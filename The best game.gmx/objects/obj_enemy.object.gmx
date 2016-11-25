@@ -112,9 +112,6 @@ if (place_meeting(x, y + vsp, obj_ground)){
     }   
 }
 
-x += hsp
-y += vsp
-
 //Enemy collision
 if (hit == 1) {
     hp -= obj_player.melee_damage;
@@ -144,6 +141,10 @@ if (hp &lt;= 0) {
             }
     }
 }
+
+//No code under this
+x += hsp
+y += vsp
 
 if (!foh) image_xscale = dir;
 </string>

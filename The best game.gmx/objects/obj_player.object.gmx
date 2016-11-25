@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///initialize variables
+            <string>//Set state
+state = states.idle;
+
+//initialize variables
 grav = 0.2;                         //Gravity amount
 hsp = 0;                            //Set horizontal speed to 0, standing still.
 vsp = 0;                            //Same as above but vertical
@@ -35,7 +38,8 @@ moveincrease = 0.3;                 //Move speed increase on each fram
 facing = 1;                         //Variable to know which dir player is facing
 melee_damage = 50;                  //Player damage / meele
 power_up = false;                   //If the player has a power_up
-hub_enter = 0;                      //If the player can enter a room                 
+hub_enter = 0;                      //If the player can enter a room     
+idle = false;                       //To enter idel mode            
 
 //Junmp vars
 jumpspeed_normal = 6;               //Jump height on normal
@@ -52,7 +56,30 @@ wjumpsd2 = 0;                       //For the ground objects
 instance_create(x, y, cont_view);
 
 //Remove
-sprite = 1;
+sprite = 3;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>state = states.idle;
 </string>
           </argument>
         </arguments>
@@ -102,17 +129,24 @@ sprite = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//get the player´s input
-key_right = keyboard_check(ord("D"));
-key_left = -keyboard_check(ord("A"));
-key_down = keyboard_check(ord("S"));
-key_jump = keyboard_check_pressed(ord("W"));
-key_melee = keyboard_check_pressed(vk_space);
-key_enter_hub = keyboard_check_pressed(ord('E'))
-key_commentme = keyboard_check(ord("V"));
-key_commentme1 = keyboard_check_pressed(ord("N"));
-key_go_back = keyboard_check_pressed(ord("M"));
-key_hub_unlock = keyboard_check_pressed(ord("H"));
+            <string>switch (state) {
+    case states.idle:
+        scr_idle();
+    break;
+    
+    case states.normal:
+        scr_normal();
+    break;
+    
+    case states.movement:
+        scr_movement();
+    break;
+    
+    case states.melee: 
+        scr_melee();
+    break;
+    
+}
 
 //Cheats delete them later
 if (key_go_back) {
@@ -135,125 +169,6 @@ if (key_hub_unlock) {
 //Enter a level
 if (hub_enter != 0) &amp;&amp; (key_enter_hub) { //If hub enter and the key is pressed enter the hub
     room_goto(hub_enter);
-}
-
-//Melee
-if (key_melee) {
-    if (power_up == true) {
-    //inster melee animation here
-    } else {
-    sprite_index = spr_player_melee; //change to melee animation
-    image_speed = 8 * (1/room_speed); //Set the animation speed
-}
-
-//Creates the hitbox for the player
-    with (instance_create(x,y,obj_player_melee_hitbox)) { //creates an hitbox instance and keeps the id in the statement
-        image_xscale = obj_player.facing;
-        with (instance_place(x,y,obj_enemy)) {
-            if (hit == 0) {
-                hit = 1;
-                vsp = -5 * obj_player.facing;
-                hsp = sign(x - other.x) * 2;
-                image_xscale = sign(hsp);
-            }
-        }
-    }
-    
-}
-//End of melee
-
-//Normal ground jumping
-if (place_meeting(x, y+1, obj_ground)) &amp;&amp; (key_jump) {
-    vsp = -jumpspeed;
-    audio_play_sound(snd_player_jump,1,0);
-}
-//End of normal ground jumping
-
-//Reseting wall jumps in the air
-if ((!place_meeting(x+6, y, obj_ground)) &amp;&amp; (!place_meeting(x-6, y, obj_ground))) || (place_meeting(x, y + 1, obj_ground)){
-    wjumps = wjumpsmax;
-}
-//End of reseting wall jumps in the air
-
-//Walljump
-if (key_jump) &amp;&amp; (place_meeting(x+5, y, obj_ground) || place_meeting(x-5, y, obj_ground)) &amp;&amp; (wjumps &gt; 0) &amp;&amp; (!place_meeting(x, y + 1, obj_ground)) &amp;&amp; (wjumpsd == 0) {  
-        wjumps -= 1;
-        vsp = -jumpspeed;
-        audio_play_sound(snd_player_jump,1,0);
-}
-//End of walljump
-
-/*key left will be either -1 or 0 becuase the key_left = -keyboard....
-Key right will be either 1 or 0 brcause the key_right = keyboar....
-So its move = -1 + 0 = -1 or
-move = 0 + 1 = 1 or
-move = 0 + 0 = 0 or
-move = -1 + 1 = 0
-*/
-move = key_left + key_right;
-
-/* hsp = horizontal speed
-take the move var times the movementspeed (in the create event), so movespeed * -1, 1 or 0
-*/
-var stop = 0.2; //temporary variable for when the player should stop
-
-if move != 0 { //if the player is pressing a button
-    hsp += move * moveincrease; //Move will be either -1 or 1, so multiply 1 or -1 by moveincrease. 
-        if ((sign(hsp) == 1) &amp;&amp; (hsp &gt; movespeed)) || ((sign(hsp) == -1) &amp;&amp; (hsp &lt; -movespeed)) { //If hsp is positive and greater than movespeed, set hsp to movespeed so the player can't move faster than the move speed. Same for the other side of the ||, but its negative.
-            hsp = move * movespeed; //when hsp is more than movespeed, set hsp to movespeed. Move * movespeed is to see if its to the left (-) or to the right (+).
-        }
-    } else {
-        if (hsp != 0) { //If hsp is not equal to 0
-            hsp = hsp * movedecrease; //Multiplay hsp with the move decrease speed
-                if ((sign(hsp) == 1) &amp;&amp; (hsp &lt; stop)) || ((sign(hsp) == -1) &amp;&amp; (hsp &gt; -stop)) { //If hsp is positive and is less than stop, make hsp = 0. Same for after the || (or) but for the left negative variable
-                        hsp = 0; //Make hsp = 0
-                    }
-            }
-}
-
-// if vertical speed is less than 10, add the gravity to it.
-if (vsp &lt; 10) vsp += grav;
-
-//Setting facing var
-if move != 0 { //if the player is pressing a button
-    facing = move 
-}
-
-//Player dir facing
-image_xscale = facing;
-
-//horizontal collision
-if (place_meeting(x+hsp, y, obj_ground)){ //if the object will collide when he adds the hsp to his x cord
-//sign returns 1, -1 or 0. if its 324 its 1 and -324 its -1 or 0 its 0. 
-    while(!place_meeting(x+sign(hsp), y, obj_ground)) { //So if its not hitting the wall now, add either 1 or -1 to x until it hits the wall
-        x += sign(hsp); //add the 1 or -1 to the x cord
-    }     
-    hsp = 0;  //when the while loop ends, the player hits the wall. Make the hsp = 0 so the player stops moving and dsnt go through the wall
-}
-
-//vertical collision
-if (place_meeting(x, y + vsp, obj_ground)){ //if its on the ground
-    while(!place_meeting(x, y + sign(vsp), obj_ground)) { //when its not on the ground
-        y += sign(vsp); //same as the hs collision
-    }
-    vsp = 0;       
-}
-
-//Write movement code above this
-x += hsp //Add the hsp to x to move the player
-y += vsp //Same as the x position but with vertical speed.
-
-//remove
-if (sprite = 1) {
-    sprite_index = spr_Hanzo;
-}
-
-if (sprite = 2) {
-    sprite_index = spr_Genji;
-}
-
-if (sprite = 3) {
-    sprite_index = spr_player;
 }
 </string>
           </argument>
@@ -280,6 +195,7 @@ if (sprite = 3) {
             <string>///Change back to player sprite after melee animation
 if (sprite_index == spr_player_melee) /*insert powerup sprite here*/ {
     sprite_index = spr_player;
+    hsp = 0;
 }
 </string>
           </argument>
