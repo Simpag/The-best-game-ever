@@ -94,6 +94,9 @@ draw_text(895,896,"level 1"); //what to say
 draw_text(1192,896,"level 2"); //what to say
 
 draw_text(1488,896,"level 3"); //what to say
+if room = win
+draw_text(352,320,"YOU WIN")
+draw_text(352,352,"FUCK YOU YOU BITCH BOI")
 }
 </string>
           </argument>
