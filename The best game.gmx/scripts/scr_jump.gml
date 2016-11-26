@@ -9,3 +9,5 @@ if (place_meeting(x+5, y, obj_ground) || place_meeting(x-5, y, obj_ground)) && (
     vsp = -jumpspeed;
     audio_play_sound(snd_player_jump,1,0);
 }
+
+if (state != states.normal) state = states.normal;

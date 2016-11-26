@@ -2,10 +2,13 @@
 scr_inputs();
 
 
-
-
-if (key_right) || (key_left*(-1)) || (key_jump) || (key_down) {
+if (key_right) || (key_left*(-1)) {
     state = states.movement;
+    idle = false;
+}
+
+if (key_jump) {
+    scr_jump();
     idle = false;
 }
 

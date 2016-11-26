@@ -2,8 +2,7 @@
 scr_inputs();
 
 if (key_jump) scr_jump();
-
-if (state != states.melee) if (key_melee) state = states.melee;
+if (key_melee) if (state != states.melee) state = states.melee;
 
 
 /*key left will be either -1 or 0 becuase the key_left = -keyboard....
