@@ -64,6 +64,8 @@
     
     draw_text(64,640,"enemys drop coins") //what to say
     
+    draw_text(128,576,"press space to attack") //what to say
+    
     draw_text(384,512,"   time to wall jump") //what to say
     
     draw_text(384,544,"you can only wall jump") //what to say
