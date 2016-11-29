@@ -35,8 +35,6 @@
       </sprites>
     </sprites>
     <sprites name="Static objects">
-      <sprite>sprites\spr_ground</sprite>
-      <sprite>sprites\spr_ground_2</sprite>
       <sprite>sprites\spr_flying_ground</sprite>
       <sprite>sprites\spr_powerup</sprite>
       <sprite>sprites\spr_portal</sprite>
@@ -47,6 +45,11 @@
         <sprite>sprites\spr_healthbar_border</sprite>
         <sprite>sprites\spr_healthbar_inner</sprite>
         <sprite>sprites\spr_healthbar_bg</sprite>
+      </sprites>
+      <sprites name="Ground">
+        <sprite>sprites\spr_tiles</sprite>
+        <sprite>sprites\spr_ground</sprite>
+        <sprite>sprites\spr_ground_2</sprite>
       </sprites>
     </sprites>
     <sprites name="Active objects">
@@ -70,6 +73,7 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\scr_auto_tile.gml</script>
     <script>scripts\scr_death.gml</script>
     <script>scripts\scr_InitMenu.gml</script>
     <script>scripts\scr_addClickables.gml</script>
@@ -101,13 +105,15 @@
       </objects>
     </objects>
     <objects name="Static objects">
-      <object>objects\obj_ground</object>
-      <object>objects\obj_ground_2</object>
       <object>objects\obj_powerup</object>
       <object>objects\obj_portal</object>
       <object>objects\obj_oneway</object>
-      <object>objects\obj_ground_dead</object>
       <object>objects\obj_save</object>
+      <objects name="Ground">
+        <object>objects\obj_ground</object>
+        <object>objects\obj_ground_2</object>
+        <object>objects\obj_ground_dead</object>
+      </objects>
     </objects>
     <objects name="Active objects">
       <object>objects\obj_oneway_moving</object>

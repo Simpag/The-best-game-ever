@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>///hi
 depth = -20
+image_speed = 0;
+sprite_index = spr_tiles;
+image_index = scr_auto_tile()
 </string>
           </argument>
         </arguments>
