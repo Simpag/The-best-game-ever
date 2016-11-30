@@ -14,7 +14,7 @@ menuPage = 0; //Same as above but page
 //Sub menu
     //Stat Game sub
         menuText[1,0] = 3 //Amout of options to pick from
-        menuText[1,1] = "Save 1 /Saves not added yet"
+        menuText[1,1] = "Save 1 /Saves not implemented yet"
         menuText[1,2] = "Save 2 /Just starts game"
         menuText[1,3] = "Back"
     //End of Start game sub
