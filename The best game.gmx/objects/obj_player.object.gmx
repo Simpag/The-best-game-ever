@@ -146,6 +146,10 @@ sprite = 3;
         scr_melee();
     break;
     
+    case states.pause:
+        scr_pause();
+    break;
+    
 }
 
 //Cheats delete them later

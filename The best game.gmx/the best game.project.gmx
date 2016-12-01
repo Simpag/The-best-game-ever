@@ -87,6 +87,7 @@
       <scripts name="sub">
         <script>scripts\scr_collision.gml</script>
         <script>scripts\scr_inputs.gml</script>
+        <script>scripts\scr_pause.gml</script>
       </scripts>
     </scripts>
   </scripts>

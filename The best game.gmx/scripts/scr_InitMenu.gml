@@ -1,7 +1,7 @@
 ///scr_InitMenu
 menuSelected = 1; //To know which menu is selected
 menuPage = 0; //Same as above but page
-
+if (menuType == mainMenu) {
 //Main menu
     menuText[0,0] = 4; //Amout of options to pick
     menuText[0,1] = "Start Game"
@@ -35,3 +35,33 @@ menuPage = 0; //Same as above but page
     //End of volume sub-sub
 
 //End of sub-sub menu
+}
+
+if (menuType == EscMenu) {
+//ESC menu
+    menuText[0,0] = 4; //Amout of options to pick
+    menuText[0,1] = "Continue Game"
+    menuText[0,2] = "Options"
+    menuText[0,3] = "Instructions"
+    menuText[0,4] = "Save & Quit"
+
+//End of main menu
+
+//Sub menu
+    //Options sub
+        menuText[2,0] = 3 //Amout of options to pick from
+        menuText[2,1] = "Volume"
+        menuText[2,2] = "Controls"
+        menuText[2,3] = "Back"
+    //End of Options sub
+            
+//End of sub menu
+
+//Sub-sub menu
+    //volume sub-sub
+        menuText[3,0] = 1 //Amout of options to pick from
+        menuText[3,1] = "Back"
+    //End of volume sub-sub
+
+//End of sub-sub menu
+}

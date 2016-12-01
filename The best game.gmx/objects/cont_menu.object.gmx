@@ -54,81 +54,142 @@ scr_addClickables();
 
 //Selection of menu
 if (key_select) {
-    switch(menuPage) {
-        case 0: //Main menu
-            if (menuSelected = 1) { //Start Game
-                scr_removeClickables();
-                menuPage = 1; //Move to the Start game page
-                scr_addClickables();
-            }
-            
-            if (menuSelected = 2) { //Options
-                scr_removeClickables();
-                menuPage = 2; //Move to the Options page
-                scr_addClickables();
-            }
-            
-            if (menuSelected = 3) { //Instructions
-                show_message("Instructions");
-            }
-            
-            if (menuSelected = 4) { //Quit Game
-                game_end();
-            }
-        break; //End of main menu
-//End of case 0
+    if (menuType == mainMenu) {
+        switch(menuPage) {
+            case 0: //Main menu
+                if (menuSelected = 1) { //Start Game
+                    scr_removeClickables();
+                    menuPage = 1; //Move to the Start game page
+                    scr_addClickables();
+                }
+                
+                if (menuSelected = 2) { //Options
+                    scr_removeClickables();
+                    menuPage = 2; //Move to the Options page
+                    scr_addClickables();
+                }
+                
+                if (menuSelected = 3) { //Instructions
+                    show_message("Instructions");
+                }
+                
+                if (menuSelected = 4) { //Quit Game
+                    game_end();
+                }
+            break; //End of main menu
+    //End of case 0
+    
+            case 1: //Start Game Submenu
+                if (menuSelected = 1) { //Save 1
+                    show_message("Save 1");
+                    room_goto_next(); 
+              } //End of save 1
+              
+                if (menuSelected = 2) { //Save 2
+                    show_message("Save 2"); 
+                    room_goto_next(); 
+              } //End of save 2
+              
+                if (menuSelected = 3) { //Go back
+                    scr_removeClickables();
+                    menuPage = 0; 
+                    scr_addClickables();
+              } //End of back
+          break; //End of Start Game Submenu
+    //End of case 1
+    
+            case 2: //Options Game Submenu
+                if (menuSelected = 1) { //Volume
+                    scr_removeClickables();
+                    menuPage = 3; //Move to the Volume page
+                    scr_addClickables();
+              } //End of Master Volume
+              
+                if (menuSelected = 2) { //test
+                    show_message("Test"); 
+              } //End of Music Volume
+              
+                if (menuSelected = 3) { //Go back
+                    scr_removeClickables();
+                    menuPage = 0; 
+                    scr_addClickables();
+              } //End of back
+          break; //End of Options Submenu
+    //End of case 2
+    
+            case 3: //Volume Submenu
+            scr_addClickables();
+                if (menuSelected = 1) { //Go back
+                    scr_removeClickables();
+                    menuPage = 2; 
+                    menuSelected = 1;
+                    scr_addClickables();
+              } //End of back
+          break; //End of Options Submenu
+    //End of case 3
+          
+        } //End of switch
+    } //End of selection of menu
 
-        case 1: //Start Game Submenu
-            if (menuSelected = 1) { //Save 1
-                show_message("Save 1");
-                room_goto_next(); 
-          } //End of save 1
+//ESC menu
+if (menuType == escMenu) {
+        switch(menuPage) {
+            case 0: //Main menu
+                if (menuSelected = 1) { //Continue Game
+                    scr_removeClickables();
+                    //insert pause script here
+                }
+                
+                if (menuSelected = 2) { //Options
+                    scr_removeClickables();
+                    menuPage = 2; //Move to the Options page
+                    scr_addClickables();
+                }
+                
+                if (menuSelected = 3) { //Instructions
+                    show_message("Instructions");
+                }
+                
+                if (menuSelected = 4) { //Save &amp; Quit
+                    //insert save script here
+                    room_goto(rm_hub);
+                }
+            break; //End of main menu
+    //End of case 0
+    
+            case 2: //Options Game Submenu
+                if (menuSelected = 1) { //Volume
+                    scr_removeClickables();
+                    menuPage = 3; //Move to the Volume page
+                    scr_addClickables();
+              } //End of Master Volume
+              
+                if (menuSelected = 2) { //test
+                    show_message("Test"); 
+              } //End of Music Volume
+              
+                if (menuSelected = 3) { //Go back
+                    scr_removeClickables();
+                    menuPage = 0; 
+                    scr_addClickables();
+              } //End of back
+          break; //End of Options Submenu
+    //End of case 2
+    
+            case 3: //Volume Submenu
+            scr_addClickables();
+                if (menuSelected = 1) { //Go back
+                    scr_removeClickables();
+                    menuPage = 2; 
+                    menuSelected = 1;
+                    scr_addClickables();
+              } //End of back
+          break; //End of Options Submenu
+    //End of case 3
           
-            if (menuSelected = 2) { //Save 2
-                show_message("Save 2"); 
-                room_goto_next(); 
-          } //End of save 2
-          
-            if (menuSelected = 3) { //Go back
-                scr_removeClickables();
-                menuPage = 0; 
-                scr_addClickables();
-          } //End of back
-      break; //End of Start Game Submenu
-//End of case 1
-
-        case 2: //Options Game Submenu
-            if (menuSelected = 1) { //Volume
-                scr_removeClickables();
-                menuPage = 3; //Move to the Volume page
-                scr_addClickables();
-          } //End of Master Volume
-          
-            if (menuSelected = 2) { //test
-                show_message("Test"); 
-          } //End of Music Volume
-          
-            if (menuSelected = 3) { //Go back
-                scr_removeClickables();
-                menuPage = 0; 
-                scr_addClickables();
-          } //End of back
-      break; //End of Options Submenu
-//End of case 2
-
-        case 3: //Volume Submenu
-        scr_addClickables();
-            if (menuSelected = 1) { //Go back
-                scr_removeClickables();
-                menuPage = 2; 
-                menuSelected = 1;
-                scr_addClickables();
-          } //End of back
-      break; //End of Options Submenu
-//End of case 3
-      
-    } //End of switch
-} //End of selection of menu
+        } //End of switch
+    } //End of selection of menu
+}
 
 //Spawning the volume sliders
 if (menuPage == 3) { 

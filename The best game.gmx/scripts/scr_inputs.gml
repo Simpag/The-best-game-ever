@@ -6,6 +6,8 @@ key_down = keyboard_check(ord("S"));
 key_jump = keyboard_check_pressed(ord("W"));
 key_melee = keyboard_check_pressed(vk_space);
 key_enter_hub = keyboard_check_pressed(ord('E'))
+//Pause menu
+key_pause = keyboard_check_pressed(vk_escape);
 //cheats
 key_commentme = keyboard_check(ord("V"));
 key_commentme1 = keyboard_check_pressed(ord("N"));
