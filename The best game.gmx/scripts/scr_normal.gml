@@ -17,11 +17,6 @@ if (key_melee) {
     idle = false;
 }
 
-if (key_pause) {
-    state = states.pause
-    idle = false;
-}
-
 //No code under this
 scr_collision();
 
