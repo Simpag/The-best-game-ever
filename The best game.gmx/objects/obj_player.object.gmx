@@ -55,8 +55,14 @@ wjumpsd2 = 0;                       //For the ground objects
 //Initiate Camera
 instance_create(x, y, cont_view);
 
-//Remove
-sprite = 3;
+//Touch screen buttons
+//if (os_type != os_windows) &amp;&amp; (os_type != os_macosx) {
+dHeight = window_get_height();
+dWidth = window_get_width();
+
+dJump = virtual_key_add(25, dHeight - (25 + 64), 64, 64, ord("W"))
+virtual_key_show(dJump);
+//}
 </string>
           </argument>
         </arguments>
