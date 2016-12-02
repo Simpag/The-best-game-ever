@@ -56,13 +56,7 @@ wjumpsd2 = 0;                       //For the ground objects
 instance_create(x, y, cont_view);
 
 //Touch screen buttons
-//if (os_type != os_windows) &amp;&amp; (os_type != os_macosx) {
-dHeight = window_get_height();
-dWidth = window_get_width();
-
-dJump = virtual_key_add(25, dHeight - (25 + 64), 64, 64, ord("W"))
-virtual_key_show(dJump);
-//}
+if ((os_type != os_windows) &amp;&amp; (os_type != os_macosx)) || (global.debug == true) scr_touch();
 </string>
           </argument>
         </arguments>
@@ -154,23 +148,7 @@ virtual_key_show(dJump);
     
 }
 
-//Cheats delete them later
-if (key_go_back) {
-    room_goto_previous();
-}
-
-if key_commentme1 == true {
-    room_goto_next();
-}
-
-if key_commentme == true {
-    vsp = -50;
-}
-
-if (key_hub_unlock) {
-    hub_unlocked += 1;
-}
-//End of cheats
+if (global.debug == true) scr_debug();
 
 //Enter a level
 if (hub_enter != 0) &amp;&amp; (key_enter_hub) { //If hub enter and the key is pressed enter the hub

@@ -73,6 +73,8 @@
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\scr_touch.gml</script>
+    <script>scripts\scr_debug.gml</script>
     <script>scripts\scr_auto_tile.gml</script>
     <script>scripts\scr_death.gml</script>
     <script>scripts\scr_InitMenu.gml</script>

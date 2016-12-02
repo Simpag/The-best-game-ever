@@ -29,6 +29,9 @@ enum states {
     melee //4
 }
 
+//Debug
+global.debug = true;
+
 room_goto_next();</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
