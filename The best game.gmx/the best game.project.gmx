@@ -32,6 +32,12 @@
         <sprite>sprites\spr_player_melee_hitbox</sprite>
         <sprite>sprites\spr_Genji</sprite>
         <sprite>sprites\spr_Hanzo</sprite>
+        <sprites name="touch">
+          <sprite>sprites\spr_touch_arrow_right</sprite>
+          <sprite>sprites\spr_touch_arrow_left</sprite>
+          <sprite>sprites\spr_touch_arrow_down</sprite>
+          <sprite>sprites\spr_touch_arrow_up</sprite>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="Static objects">
