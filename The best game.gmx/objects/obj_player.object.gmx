@@ -203,14 +203,16 @@ if (sprite_index == spr_player_melee) /*insert powerup sprite here*/ {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Down
-draw_sprite(spr_touch_arrow_down, 0, 2*space + size, dHeight - space - size);
-//Up
-draw_sprite(spr_touch_arrow_up, 0, dWidth - space - size, dHeight - space - size);
-//Right
-draw_sprite(spr_touch_arrow_right, 0, 3*space + 2*size, dHeight - space - size);
-//Left
-draw_sprite(spr_touch_arrow_left, 0, space, dHeight - space - size);
+            <string>if ((os_type != os_windows) &amp;&amp; (os_type != os_macosx)) {
+    //Down
+    draw_sprite(spr_touch_arrow_down, 0, 2*space + size, dHeight - space - size);
+    //Up
+    draw_sprite(spr_touch_arrow_up, 0, dWidth - space - size, dHeight - space - size);
+    //Right
+    draw_sprite(spr_touch_arrow_right, 0, 3*space + 2*size, dHeight - space - size);
+    //Left
+    draw_sprite(spr_touch_arrow_left, 0, space, dHeight - space - size);
+}
 </string>
           </argument>
         </arguments>
